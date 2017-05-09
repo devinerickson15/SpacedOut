@@ -11,7 +11,7 @@ import java.util.Objects;
 
 /**
  *
- * @author devinerickson
+ * @author devinerickson, keithjacobson, meganheadley
  */
 public class Player implements Serializable{
     
