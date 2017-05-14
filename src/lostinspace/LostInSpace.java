@@ -6,6 +6,7 @@
 package lostinspace;
 
 import byui.cit260.lostinSpace.model.Player;
+import byui.cit260.lostinSpace.model.Planet;
 
 /**
  *
@@ -24,7 +25,15 @@ public class LostInSpace {
         
         String playerInfo = playerOne.toString();
         System.out.println(playerInfo);
+    
+        Planet sphere = new Planet ();
         
+        sphere.setName("Neptune");
+        sphere.setDesc("round");
+        
+        String currentPlanet = sphere.toString();
+        System.out.println(currentPlanet);
     }
+    
     
 }
