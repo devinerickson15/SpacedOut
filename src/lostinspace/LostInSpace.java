@@ -9,10 +9,10 @@ package lostinspace;
 import byui.cit260.lostinSpace.model.Actor;
 import byui.cit260.lostinSpace.model.Game;
 import byui.cit260.lostinSpace.model.Map;
-
+import byui.cit260.lostinSpace.model.Alien
 import byui.cit260.lostinSpace.model.Fuel;
 import byui.cit260.lostinSpace.model.Inventory;
-
+import byui.cit260.lostinSpace.model.regularScenetype
 import byui.cit260.lostinSpace.model.Player;
 import byui.cit260.lostinSpace.model.Planet;
 import byui.cit260.lostinSpace.model.Puzzle;
@@ -32,7 +32,10 @@ public class LostInSpace {
         
         playerOne.setName("Michael");
         playerOne.setHighScore(20000);
-        
+                    
+            String playerInfo = playerOne.toString();
+            System.out.println(playerInfo);
+            
         //Initialize Inventory
         Inventory playerInventory = new Inventory();
         
@@ -58,17 +61,36 @@ public class LostInSpace {
             firstPuzzle.setSolution(256);
             firstPuzzle.setPuzzle(1);
         
-            String playerInfo = playerOne.toString();
-            System.out.println(playerInfo);
+        //Initialize regularScenetype
+        regularScenetype sceneInfo = new regularScenetype();
+        
+            sceneInfo.setDescription("NO FUEL HERE!");
+            sceneInfo.setSurfaceDensity(10);
+            
+            String sceneActual = sceneInfo.toString();
+            System.out.println(sceneActual);
+            
+        //Initialize Alien
+        Alien greenGuy = new Alien();
+        
+            greenGuy.setFlee("Flee");
+            greenGuy.setFight("Fight");
+            greenGuy.setHide("Hide");
+            
+            String alienSequence = greenGuy.toString();
+            System.out.println(alienSequence);
+            
             
         //Initialize Planet    
         Planet sphere = new Planet ();
         
             sphere.setName("Neptune");
             sphere.setDesc("round");
+            sphere.setCurrentLocation(1);
         
             String currentPlanet = sphere.toString();
             System.out.println(currentPlanet);
+            
          //   
         Game bestPlayer = new Game();
         
@@ -77,6 +99,7 @@ public class LostInSpace {
         
             String topPlayer = bestPlayer.toString();
             System.out.println(topPlayer);
+            
         //
         Actor character = new Actor();
         
@@ -85,6 +108,7 @@ public class LostInSpace {
         
             String person = character.toString();
             System.out.println(character);
+            
         //
         Map locate = new Map();
         

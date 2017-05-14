@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author devinerickson
  */
-public class regularScenetype {
+public class regularScenetype implements Serializable {
     
     //class instance variables
     private String description;
