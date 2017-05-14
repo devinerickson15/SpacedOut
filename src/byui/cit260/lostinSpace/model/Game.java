@@ -11,16 +11,13 @@ import java.util.Objects;
 
 /**
  *
- * @author devinerickson
+ * @author Megan
  */
-public class Player implements Serializable{
-    
-    // classs instance variables
+public class Game implements Serializable{
     private String name;
-    private double highScore;
-    
-    public Player() {
-        
+    private double totalTime;
+
+    public Game() {
     }
 
     public String getName() {
@@ -31,26 +28,27 @@ public class Player implements Serializable{
         this.name = name;
     }
 
-    public double getHighScore() {
-        return highScore;
+    public double getTotalTime() {
+        return totalTime;
     }
 
-    public void setHighScore(double highScore) {
-        this.highScore = highScore;
+    public void setTotalTime(double totalTime) {
+        this.totalTime = totalTime;
     }
-    
-   @Override
-    public String toString() {
-        return "Player{" + "name=" + name + ", highScore=" + highScore + '}';
-    }
-    
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.name);
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.highScore) ^ (Double.doubleToLongBits(this.highScore) >>> 32));
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.name);
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
         return hash;
     }
+
+    @Override
+    public String toString() {
+        return "Game{" + "name=" + name + ", totalTime=" + totalTime + '}';
+    }
+    
 
     @Override
     public boolean equals(Object obj) {
@@ -63,8 +61,8 @@ public class Player implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Player other = (Player) obj;
-        if (Double.doubleToLongBits(this.highScore) != Double.doubleToLongBits(other.highScore)) {
+        final Game other = (Game) obj;
+        if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
             return false;
         }
         if (!Objects.equals(this.name, other.name)) {
@@ -74,6 +72,5 @@ public class Player implements Serializable{
     }
     
     
-    
-    
 }
+
