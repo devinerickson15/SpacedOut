@@ -49,6 +49,11 @@ public class Planet implements Serializable {
     }
 
     @Override
+    public String toString() {
+        return "Planet{" + "name=" + name + ", desc=" + desc + ", currentLocation=" + currentLocation + '}';
+    }
+
+    @Override
     public int hashCode() {
         int hash = 5;
         hash = 67 * hash + Objects.hashCode(this.name);
