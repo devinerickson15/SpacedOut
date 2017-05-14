@@ -12,7 +12,7 @@ import byui.cit260.lostinSpace.model.Map;
 import byui.cit260.lostinSpace.model.Alien;
 import byui.cit260.lostinSpace.model.Fuel;
 import byui.cit260.lostinSpace.model.Inventory;
-import byui.cit260.lostinSpace.model.regularScenetype;
+import byui.cit260.lostinSpace.model.RegularSceneType;
 import byui.cit260.lostinSpace.model.Player;
 import byui.cit260.lostinSpace.model.Planet;
 import byui.cit260.lostinSpace.model.Puzzle;
@@ -62,7 +62,7 @@ public class LostInSpace {
             firstPuzzle.setPuzzle(1);
         
         //Initialize regularScenetype
-        regularScenetype sceneInfo = new regularScenetype();
+        RegularSceneType sceneInfo = new RegularSceneType();
         
             sceneInfo.setDescription("NO FUEL HERE!");
             sceneInfo.setSurfaceDensity(10);
