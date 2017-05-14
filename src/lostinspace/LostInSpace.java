@@ -9,10 +9,10 @@ package lostinspace;
 import byui.cit260.lostinSpace.model.Actor;
 import byui.cit260.lostinSpace.model.Game;
 import byui.cit260.lostinSpace.model.Map;
-import byui.cit260.lostinSpace.model.Alien
+import byui.cit260.lostinSpace.model.Alien;
 import byui.cit260.lostinSpace.model.Fuel;
 import byui.cit260.lostinSpace.model.Inventory;
-import byui.cit260.lostinSpace.model.regularScenetype
+import byui.cit260.lostinSpace.model.regularScenetype;
 import byui.cit260.lostinSpace.model.Player;
 import byui.cit260.lostinSpace.model.Planet;
 import byui.cit260.lostinSpace.model.Puzzle;
