@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author devinerickson
  */
-public class RegularSceneType implements Serializable {
+public class RegularSceneType implements Serializable{
     
     //class instance variables
     private String description;
@@ -20,7 +20,7 @@ public class RegularSceneType implements Serializable {
 
        public RegularSceneType(){
            
-       }     
+}
 
     public String getDescription() {
         return description;
