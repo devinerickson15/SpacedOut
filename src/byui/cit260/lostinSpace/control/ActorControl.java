@@ -24,6 +24,7 @@ public class ActorControl {
             //Still need to find out how to make random number have range.
       Random hit = new Random(5);
             if (damage >= 8){
+                //if the random number is odd, the player lands the hit
                 if (hit %2 == 1){
                     hit = alienHp - damage;
                 }
@@ -31,6 +32,7 @@ public class ActorControl {
                     hit = playerHp - (damage * 2);
                 }
             }
+            //if the random number is odd OR between 1-50, the player lands the hit
             if (damage <= 7){
                 if (hit %2 == 1 || hit <= 50){
                     hit = alienHp - damage;
