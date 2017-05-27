@@ -5,7 +5,6 @@
  */
 package lostinspace;
 
-
 import byui.cit260.lostinSpace.model.Actor;
 import byui.cit260.lostinSpace.model.Game;
 import byui.cit260.lostinSpace.model.Map;
@@ -73,9 +72,11 @@ public class LostInSpace {
         //Initialize Alien
         Alien greenGuy = new Alien();
         
-            greenGuy.setFlee("Flee");
-            greenGuy.setFight("Fight");
-            greenGuy.setHide("Hide");
+            greenGuy.setAlienHp(12);
+            greenGuy.setDescription("A green ugly monster.");
+            greenGuy.setWeakAttack(1);
+            greenGuy.setMediumAttack(4);
+            greenGuy.setStrongAttack(10);
             
             String alienSequence = greenGuy.toString();
             System.out.println(alienSequence);
