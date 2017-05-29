@@ -41,9 +41,28 @@ int opportunity = randomGenerator.nextInt(100) + 1;
     else {
     playerHp = (playerHp - (mediumAttack * 2));
         return playerHp;
-}}} 
+}} 
 
- 
+    public int fleeAlien(int userSpeed,int weaponSpeedBonus,int alienSpeed){
+        
+    weaponSpeedBonus = 2;
+    alienSpeed = 12;
+        
+    Random randomNumber = new Random();
+    
+    int randomSpeed = randomNumber.nextInt(20) + 1;
+    randomSpeed = userSpeed;
+    
+    int flightSuccess = ((userSpeed + weaponSpeedBonus) - alienSpeed);
+    
+    if (flightSuccess > 0){
+        return 1;
+    }
+    else {
+        return -1;
+    } 
+    }}
+
 /*
 import java.util.Scanner;
 

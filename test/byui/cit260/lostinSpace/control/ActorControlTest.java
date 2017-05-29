@@ -150,4 +150,30 @@ public class ActorControlTest {
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result);
-}}
+}
+
+    /**
+     * Test of fleeAlien method, of class ActorControl.
+     */
+    @Test
+    public void testFleeAlien() {
+        System.out.println("Test Case #1");
+        int userSpeed = 12;
+        int weaponSpeedBonus = 2;
+        int alienSpeed = 10;
+        ActorControl instance = new ActorControl();
+        int expResult = 1;
+        int result = instance.fleeAlien(userSpeed, weaponSpeedBonus, alienSpeed);
+        assertEquals(expResult, result);
+        
+        System.out.println("Test Case #2");
+        
+        userSpeed = -1;
+        weaponSpeedBonus = 2;
+        alienSpeed = 20;
+
+        expResult = -1;
+        result = instance.fleeAlien(userSpeed, weaponSpeedBonus, alienSpeed);
+        assertEquals(expResult, result);
+    }
+}
