@@ -6,6 +6,45 @@
 
 package byui.cit260.lostinSpace.control;
 
+import java.util.Random;
+
+public class ActorControl {
+        public int attackAlien(int weakAttack,int mediumAttack, int strongAttack, int playerHp, int alienHp)  {
+           
+            if (weakAttack < 1) {
+            return -1;}
+            if (strongAttack > 20) {
+            return -1;}
+            
+           playerHp = 100;
+           alienHp = 20;
+           weakAttack = 5;
+           mediumAttack =12;
+           strongAttack =17;
+                                  
+Random randomGenerator = new Random(); 
+
+int weakAttackChance = 75;
+int mediumAttackChance = 40;
+int strongAttackChance = 17;        
+
+int opportunity = randomGenerator.nextInt(100) + 1; 
+    if (opportunity <= strongAttackChance) {
+    alienHp = alienHp - strongAttack;
+        return alienHp;}
+    else if (opportunity > strongAttackChance && opportunity <= mediumAttackChance) {
+    alienHp = alienHp - mediumAttack;
+        return alienHp;}
+    else if (opportunity > mediumAttackChance && opportunity < weakAttackChance) {
+    alienHp = alienHp - weakAttack;
+        return alienHp;} 
+    else {
+    playerHp = (playerHp - (mediumAttack * 2));
+        return playerHp;
+}}} 
+
+ 
+/*
 import java.util.Scanner;
 
 
@@ -39,49 +78,5 @@ public class ActorControl {
         }
         String userInput = attackMenu[]
     }
-}
-
-
-
-/**
-import java.util.Random;
-
-
- *
- * @author devinerickson
- 
-
-public class ActorControl {
-        public int attackAlien(int damage, int playerHp, int alienHp, int chanceToHit)  {
-            
-           playerHp = 100;
-           alienHp = 20;
-                       
-            if (damage < 3 || damage > 9){
-                return -1;
-            } 
-            //Still need to find out how to make random number have range.
-      Random hit = new Random(5);
-            if (damage >= 8){
-                //if the random number is odd, the player lands the hit
-                if (hit %2 == 1){
-                    hit = alienHp - damage;
-                }
-                else{
-                    hit = playerHp - (damage * 2);
-                }
-            }
-            //if the random number is odd OR between 1-50, the player lands the hit
-            if (damage <= 7){
-                if (hit %2 == 1 || hit <= 50){
-                    hit = alienHp - damage;
-                }
-                else{
-                    hit = playerHp - (damage * 2);
-                }
-            }
-        return hit;
-    
-}
 }
 */

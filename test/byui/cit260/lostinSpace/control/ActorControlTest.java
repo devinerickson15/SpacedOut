@@ -28,127 +28,126 @@ public class ActorControlTest {
         System.out.println("\tTest Case #1");
         
         //Input values for test case 1
-        int damage = 5;
+        
         int playerHp = 100;
         int alienHp = 20;
-        int chanceToHit = 0;
+        int weakAttack = -5;
+        int mediumAttack =12;
+        int strongAttack =17;
+        
         
         //create instance of ActorControl class
         ActorControl instance = new ActorControl();
         
+        
+        //Tried so many ways to control the random factor, but I couldn't figure it out. I did test it the unprofessional long way though.
+        //RandomMock random = new RandomMock(3,26,55,79,-1);
+        //ActorControl.getRandom(opportunity);
+        
         //call function to run test
-        int expResult = 5; //expected output returned value
-        int result = instance.attackAlien(damage, playerHp, alienHp, chanceToHit);
+        int expResult = -1; //expected output returned value
+        int result = instance.attackAlien(weakAttack, mediumAttack, strongAttack, playerHp, alienHp);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result);
-        
-       //*******Test Case 2********
+       
         System.out.println("\tTest Case #2");
         
         //Input values for test case 2
-        damage = 1;
+        
         playerHp = 100;
         alienHp = 20;
-        chanceToHit = 0;
-       
-        expResult = -1; //expected output returned value
+        weakAttack = 5;
+        mediumAttack =12;
+        strongAttack =25;
         
-         //call function to run test
-        result = instance.attackAlien(damage, playerHp, alienHp, chanceToHit);
+        //create instance of ActorControl class
+        /*ActorControl instance = new ActorControl();*/
+            
+        //call function to run test
+        expResult = -1; //expected output returned value
+        result = instance.attackAlien(weakAttack, mediumAttack, strongAttack, playerHp, alienHp);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result);
         
-        //*******Test Case 3********
         System.out.println("\tTest Case #3");
         
-         //Input values for test case 3
-        damage = 10;
+        //Input values for test case 2
+        
         playerHp = 100;
         alienHp = 20;
-        chanceToHit = 0;
-       
-        expResult = -1; //expected output returned value
+        weakAttack = 5;
+        mediumAttack =12;
+        strongAttack =17;
         
-         //call function to run test
-        result = instance.attackAlien(damage, playerHp, alienHp, chanceToHit);
+        //create instance of ActorControl class
+        /*ActorControl instance = new ActorControl();*/
+            
+        //call function to run test
+        expResult = 15; //expected output of alienHp if the random generator = 40-75 or 35% chance (20-5)
+        result = instance.attackAlien(weakAttack, mediumAttack, strongAttack, playerHp, alienHp);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result);
         
-        //*******Test Case 4********
         System.out.println("\tTest Case #4");
         
-         //Input values for test case 4
-        damage = 13;
+        //Input values for test case 2
+        
         playerHp = 100;
         alienHp = 20;
-        chanceToHit = 0;
-       
-        expResult = -1; //expected output returned value
+        weakAttack = 5;
+        mediumAttack =12;
+        strongAttack =17;
         
-         //call function to run test
-        result = instance.attackAlien(damage, playerHp, alienHp, chanceToHit);
+        //create instance of ActorControl class
+        /*ActorControl instance = new ActorControl();*/
+            
+        //call function to run test
+        expResult = 8; //expected result if random generator chooses 18-40 or 23% chance (20-12)
+        result = instance.attackAlien(weakAttack, mediumAttack, strongAttack, playerHp, alienHp);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result);
         
-        //*******Test Case 5********
         System.out.println("\tTest Case #5");
         
-         //Input values for test case 5
-        damage = 3;
+        //Input values for test case 2
+        
         playerHp = 100;
         alienHp = 20;
-        chanceToHit = 0;
-       
-        expResult = 3; //expected output returned value
+        weakAttack = 5;
+        mediumAttack =12;
+        strongAttack =17;
         
-         //call function to run test
-        result = instance.attackAlien(damage, playerHp, alienHp, chanceToHit);
+        //create instance of ActorControl class
+        /*ActorControl instance = new ActorControl();*/
+            
+        //call function to run test
+        expResult = 3; //expected result if random generator chooses 1-17 or 17% chance (20-12)
+        result = instance.attackAlien(weakAttack, mediumAttack, strongAttack, playerHp, alienHp);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result);
         
-        //*******Test Case 6********
         System.out.println("\tTest Case #6");
         
-         //Input values for test case 6
-        damage = 9;
+        //Input values for test case 2
+        
         playerHp = 100;
         alienHp = 20;
-        chanceToHit = 0;
-       
-        expResult = 9; //expected output returned value
+        weakAttack = 5;
+        mediumAttack =12;
+        strongAttack =17;
         
-         //call function to run test
-        result = instance.attackAlien(damage, playerHp, alienHp, chanceToHit);
+        //create instance of ActorControl class
+        /*ActorControl instance = new ActorControl();*/
+            
+        //call function to run test
+        expResult = 76; //expected result if random generator chooses 75-100 or 25% chance (100-(12*2 or 24)
+        result = instance.attackAlien(weakAttack, mediumAttack, strongAttack, playerHp, alienHp);
         
         //compare expected return value with actual value returned
         assertEquals(expResult, result);
-        
-        //*******Test Case 7********
-        System.out.println("\tTest Case #7");
-        
-         //Input values for test case 7
-        damage = 8;
-        playerHp = 100;
-        alienHp = 20;
-        chanceToHit = 0;
-       
-        expResult = 8; //expected output returned value
-        
-         //call function to run test
-        result = instance.attackAlien(damage, playerHp, alienHp, chanceToHit);
-        
-        //compare expected return value with actual value returned
-        assertEquals(expResult, result);
-        
-        //*******Test Case 8********
-        System.out.println("\tTest Case #8");
-        
-   
-    }
-    
-}
+}}
