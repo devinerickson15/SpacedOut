@@ -56,10 +56,15 @@ public class LostInSpace {
         //Initialize Puzzle
         Puzzle firstPuzzle = new Puzzle();
         
-            firstPuzzle.setDifficulty("Easy");
-            firstPuzzle.setSolution(256);
-            firstPuzzle.setPuzzle(1);
+            firstPuzzle.setDifficulty(1);
+            firstPuzzle.setUserInput1(10);
+            firstPuzzle.setUserInput2(10);
+            firstPuzzle.setUserInput3(10);
+            firstPuzzle.setPuzzle(30);
         
+            String puzzleSequence = firstPuzzle.toString();
+            System.out.println(puzzleSequence);
+            
         //Initialize regularScenetype
         RegularSceneType sceneInfo = new RegularSceneType();
         
