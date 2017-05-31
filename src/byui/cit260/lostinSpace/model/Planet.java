@@ -19,6 +19,8 @@ public class Planet implements Serializable {
     private String name;
     private String desc;
     private int currentLocation;
+    public int planetDepth;
+    public int surfaceDensity;
     
     //Public 
     public Planet(){

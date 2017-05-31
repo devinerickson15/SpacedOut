@@ -6,7 +6,6 @@
 package byui.cit260.lostinSpace.control;
 
 import java.util.Random;
-import byui.cit260.lostinSpace.model.Planet;
 
 /**
  *
@@ -15,6 +14,9 @@ import byui.cit260.lostinSpace.model.Planet;
 public class FuelControl {
     
     public int gatherFuel (int planetDepth, int surfaceDensity, int userInput) {
+        
+        planetDepth = 1;
+        surfaceDensity = 1;
        
        int miningAttempt;
        
