@@ -17,6 +17,8 @@ import byui.cit260.lostinSpace.model.Planet;
 import byui.cit260.lostinSpace.model.Puzzle;
 import byui.cit260.lostinSpace.model.Weapon;
 
+import byui.cit260.lostinSpace.view.StartProgramView;
+
 /**
  *
  * @author devinerickson
@@ -27,121 +29,9 @@ public class LostInSpace {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Player playerOne = new Player ();
-        
-        playerOne.setName("Michael");
-        playerOne.setHighScore(20000);
-                    
-            String playerInfo = playerOne.toString();
-            System.out.println(playerInfo);
-            
-        //Initialize Inventory
-        Inventory playerInventory = new Inventory();
-        
-        playerInventory.setRemainingFuel(7.54);
-        playerInventory.setCurrentWeapon("Ray Gun");
-        
-        //Initialize Fuel
-        Fuel gasoline = new Fuel();
-        
-        gasoline.setCollectFuel("Collecting fuel from a nearby pond, but beware, there could be an alien lurking near...");
-        gasoline.setStoreFuel(7.54);
-        
-        //Initialize Weapon
-        Weapon lazer = new Weapon();
-        
-        lazer.setWeaponName("Lazer Extreme");
-        lazer.setWeaponDamage(24);
-        
-        //Initialize Puzzle
-        Puzzle firstPuzzle = new Puzzle();
-        
-            firstPuzzle.setDifficulty(1);
-            firstPuzzle.setUserInput1(10);
-            firstPuzzle.setUserInput2(10);
-            firstPuzzle.setUserInput3(10);
-            firstPuzzle.setPuzzle(30);
-        
-            String puzzleSequence = firstPuzzle.toString();
-            System.out.println(puzzleSequence);
-            
-        //Initialize regularScenetype
-        RegularSceneType sceneInfo = new RegularSceneType();
-        
-            sceneInfo.setDescription("NO FUEL HERE!");
-            sceneInfo.setSurfaceDensity(10);
-            
-            String sceneActual = sceneInfo.toString();
-            System.out.println(sceneActual);
-            
-        //Initialize Alien
-        Alien greenGuy = new Alien();
-        
-            greenGuy.setAlienHp(12);
-            greenGuy.setDescription("A green ugly monster.");
-            greenGuy.setWeakAttack(1);
-            greenGuy.setMediumAttack(4);
-            greenGuy.setStrongAttack(10);
-            
-            String alienSequence = greenGuy.toString();
-            System.out.println(alienSequence);
-            
-            
-        //Initialize Planet    
-        Planet sphere = new Planet ();
-        
-            sphere.setName("Neptune");
-            sphere.setDesc("round");
-            sphere.setCurrentLocation(1);
-        
-            String currentPlanet = sphere.toString();
-            System.out.println(currentPlanet);
-            
-         //   
-        Game bestPlayer = new Game();
-        
-            bestPlayer.setName("Scott");
-            bestPlayer.setTotalTime(150);
-        
-            String topPlayer = bestPlayer.toString();
-            System.out.println(topPlayer);
-            
-        //
-        Actor character = new Actor();
-        
-            character.setDescription("Space Dude");
-            character.setLocation("Saturn");
-        
-            String person = character.toString();
-            System.out.println(character);
-            
-        //
-        Map locate = new Map();
-        
-            locate.setCurrentLocation("Saturn");
-            locate.setPreviousLocation("Jupiter");
-            locate.setNextLocation("Moon");
-        
-            String playerLocate = locate.toString();
-            System.out.println(playerLocate);
-
-        //Test Inventory Class
-        String inventoryInfo = playerInventory.toString();
-        System.out.println(inventoryInfo);
-        
-        //Test Fuel Class
-        String fuelInfo = gasoline.toString();
-        System.out.println(fuelInfo);
-        
-        //Test Weapon Class
-        String weaponInfo = lazer.toString();
-        System.out.println(weaponInfo);
-        
-        //Test Puzzle Class
-        String puzzleInfo = firstPuzzle.toString();
-        System.out.println(puzzleInfo);
-
+      
+    StartProgramView startProgramView = new StartProgramView();
+    startProgramView.displayStartProgramView();
+    
     }
-    
-    
 }

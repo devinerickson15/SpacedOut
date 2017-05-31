@@ -63,6 +63,11 @@ public class Puzzle implements Serializable{
     }
 
     @Override
+    public String toString() {
+        return "Puzzle{" + "userInput1=" + userInput1 + ", userInput2=" + userInput2 + ", userInput3=" + userInput3 + ", difficulty=" + difficulty + ", puzzle=" + puzzle + '}';
+    }
+
+    @Override
     public int hashCode() {
         int hash = 7;
         hash = 71 * hash + this.userInput1;
