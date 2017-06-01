@@ -5,6 +5,10 @@
  */
 package byui.cit260.lostinSpace.view;
 
+import byui.cit260.lostinSpace.control.GameControl;
+import byui.cit260.lostinSpace.model.Player;
+import java.util.Scanner;
+
 /**
  *
  * @author devinerickson, megan, keith
@@ -14,8 +18,23 @@ public class StartProgramView {
     private String promptMessage;
     
     public void displayStartProgramView() {
-        System.out.println("\n***displayStartProgram() function called ***");
-        this.promptMessage = "\nPlease enter your name: ";
+        
+       boolean done = false; // set flag to not done
+       
+       this.promptMessage = "\nPlease enter your name: ";
+       do {
+           //prompt for and get player's name
+           String playersName = this.getPlayersName();
+           if (playersName.toUpperCase().equals("Q")) //user wants to quit
+               return; //Exit the game
+           
+           //do the requested action and display the next view
+           done = this.doAction(playersName);
+           
+       } while (!done);
+       
+        
+        
         // display banner
         this.displayBanner();
         
@@ -54,6 +73,54 @@ public class StartProgramView {
             +   "\n*                                                                                           *"
             +   "\n* Good luck on your journey and safe travels!              *"
             );
+    }
+
+    private String getPlayersName() {
+        
+        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
+        String value = ""; // value to be returned 
+        boolean valid = false; //initialize to not valid
+        
+        while (!valid) {// loop WHILE an invalid value is entered
+            System.out.println("\n" + this.promptMessage);
+            
+            value = keyboard.nextLine(); //GET next line typed on keyboard
+            value = value.trim(); //TRIM leading and trailing blanks 
+            
+            if (value.length() <1) {// value is blank
+                    System.out.println("\nInvalid value: value cannot be blank");
+                    continue;
+            }
+            
+            break; // end the loop
+        }
+           
+        return value; // return the value entered
+    }
+
+    private boolean doAction(String playersName) {
+        
+        if(playersName.length() < 2) { 
+            System.out.println("\nInvalid players name: "
+                + "The name must be greater than one character in length");
+            return false;
+        }
+        
+        //call createPalyer() control function
+        Player player = GameControl.createPlayer(playersName);
+        
+        if (player == null) {//if unsuccessful
+                System.out.println("\nError creating the player.");
+                return false;
+        }
+    //display next view
+    this.displayNextView();
+    
+    return true; //success!
+    }
+
+    private void displayNextView() {
+        System.out.println("\n*** displayNextView() called ***");
     }
     
 }
