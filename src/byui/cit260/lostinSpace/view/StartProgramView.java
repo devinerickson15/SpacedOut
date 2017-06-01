@@ -114,13 +114,26 @@ public class StartProgramView {
                 return false;
         }
     //display next view
-    this.displayNextView();
+    this.displayNextView(player);
     
     return true; //success!
     }
 
-    private void displayNextView() {
-        System.out.println("\n*** displayNextView() called ***");
+    private void displayNextView(Player player) {
+        
+        // Display a custom welcome message
+        System.out.println("\n==========================="
+                        + "\n Welcome to the game" + player.getName()
+                        + "\n We hope you have a lot of fun!"
+                        + "\n============================================"
+                         );
+        // Create MainMenuView object
+        MainMenuView mainMenuView = new MainMenuView();
+                
+        //Display the main menu view
+        mainMenuView.displayMainMenuView();
+        
+        
     }
     
 }

@@ -6,6 +6,7 @@
 package byui.cit260.lostinSpace.control;
 
 import byui.cit260.lostinSpace.model.Player;
+import lostinspace.LostInSpace;
 
 /**
  *
@@ -13,9 +14,16 @@ import byui.cit260.lostinSpace.model.Player;
  */
 public class GameControl {
 
-    public static Player createPlayer(String playersName) {
-        System.out.println("\n**** createPlayer90 funciton called ***");
-        return new Player();
+    public static Player createPlayer(String name) {
+        
+        if (name == null) {
+            return null;
+        }
+        Player player = new Player();
+        player.setName(name);
+        LostInSpace.setPlayer(player); // save the player
+        
+        return player;
     }
     
 }
