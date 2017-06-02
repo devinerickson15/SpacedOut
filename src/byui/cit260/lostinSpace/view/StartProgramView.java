@@ -17,32 +17,18 @@ public class StartProgramView {
     
     private String promptMessage;
     
-    public void displayStartProgramView() {
+    public StartProgramView() {
         
-       boolean done = false; // set flag to not done
-       
        this.promptMessage = "\nPlease enter your name: ";
-       do {
-           //prompt for and get player's name
-           String playersName = this.getPlayersName();
-           if (playersName.toUpperCase().equals("Q")) //user wants to quit
-               return; //Exit the game
-           
-           //do the requested action and display the next view
-           done = this.doAction(playersName);
-           
-       } while (!done);
-       
         
-        
-        // display banner
-        this.displayBanner();
+       // display banner
+       this.displayBanner();
         
     }
 
     private void displayBanner() {
         System.out.println(
-                  "\n***********************************************************"
+                "\n***********************************************************"
             +   "\n* You awaken to find yourself on an unfamiliar  *"
             +   "\n* and barren planet, with intense winds and no   *"
             +   "\n* sign of life. As you look up to the night sky, you     *"
@@ -73,6 +59,21 @@ public class StartProgramView {
             +   "\n*    *"
             +   "\n* Good luck on your journey and safe travels!    *"
             );
+    }
+    
+    public void displayStartProgramView(){
+    
+    boolean done = false; // set flag to not done
+       do {
+           //prompt for and get player's name
+           String playersName = this.getPlayersName();
+           if (playersName.toUpperCase().equals("Q")) //user wants to quit
+               return; //Exit the game
+           
+           //do the requested action and display the next view
+           done = this.doAction(playersName);
+           
+       } while (!done);
     }
 
     private String getPlayersName() {
@@ -122,11 +123,12 @@ public class StartProgramView {
     private void displayNextView(Player player) {
         
         // Display a custom welcome message
-        System.out.println("\n==========================="
-                        + "\n Welcome to the game" + player.getName()
+        System.out.println("\n==============================="
+                        + "\n Welcome to the game" + " " + player.getName() + "!"
                         + "\n We hope you have a lot of fun!"
-                        + "\n============================================"
+                        + "\n==============================="
                          );
+                         
         // Create MainMenuView object
         MainMenuView mainMenuView = new MainMenuView();
                 

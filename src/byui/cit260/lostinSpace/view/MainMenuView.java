@@ -5,15 +5,93 @@
  */
 package byui.cit260.lostinSpace.view;
 
+import java.util.Scanner;
+
 /**
  *
  * @author Kevin
  */
 public class MainMenuView {
 
-    void displayMainMenuView() {
+    private String menu;
+    
+    
+    public void displayMainMenuView() {
       
-        System.out.println("\n*** displayMenu() function called ***");
+        boolean done = false;
+        do {
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("Q"))
+                return;
+            
+            done = this.doAction(menuOption);
+            
+        } while (!done);
+        }
+    
+        public MainMenuView() {
+        this.menu = "\n"
+                  + "\n--------------------------------"
+                  + "|     Main Menu                   |"
+                  + "\n--------------------------------"
+                  + "\nN - Start new game"
+                  + "\nR - Restore existing game"
+                  + "\nH - Get help on how to play the game"
+                  + "\nE - Exit"
+                  + "\n--------------------------------";           
     }
     
-}
+
+    private String getMenuOption() {
+        Scanner keyboard = new Scanner(System.in);
+        String value = "";
+        boolean valid = false;
+        while (!valid) {
+            System.out.println("\n" + this.menu);
+            
+            value =keyboard.nextLine();
+            value =value.trim();
+            if (value.length() < 1){
+                System.out.println("\nInvalid value: value cannot be blank");
+                continue;
+            }
+            break;
+        }
+        return value;
+    }
+
+    public boolean doAction(String choice) {
+        
+        choice = choice.toUpperCase();
+        
+        switch (choice) {
+            case "N":
+                this.startNewGame();
+                break;
+            case "R":
+                this.restoreExistingGame();
+                break;
+            case "H":
+                this.displayHelpMenu();
+                break;
+            default:
+                System.out.println("\n*** Invalid Selection *** Try again");
+                return false;
+        }
+        return true;
+        }
+
+    private void startNewGame() {
+        System.out.println("*** startNewGame function called***");
+    }
+
+    private void restoreExistingGame() {
+        System.out.println("*** restoreExistingGame function called***");
+    }
+
+    private void displayHelpMenu() {
+        System.out.println("*** displayHelpMenu function called***");
+    }
+    }
+    
+    
