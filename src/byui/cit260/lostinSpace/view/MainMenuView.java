@@ -5,11 +5,13 @@
  */
 package byui.cit260.lostinSpace.view;
 
+import byui.cit260.lostinSpace.control.GameControl;
 import java.util.Scanner;
+import lostinspace.LostInSpace;
 
 /**
  *
- * @author Kevin
+ * @author Megan
  */
 public class MainMenuView {
 
@@ -82,7 +84,13 @@ public class MainMenuView {
         }
 
     private void startNewGame() {
-        System.out.println("*** startNewGame function called***");
+        
+        //Create a new game
+        GameControl.createNewGame(LostInSpace.getPlayer());
+        
+        // display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void restoreExistingGame() {
@@ -90,7 +98,12 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println("*** displayHelpMenu function called***");
+        
+        //create HelpMenuView object
+        HelpMenuView helpMenuView = new HelpMenuView();
+        
+        //display the help menu view
+        helpMenuView.displayHelpMenuView();
     }
     }
     

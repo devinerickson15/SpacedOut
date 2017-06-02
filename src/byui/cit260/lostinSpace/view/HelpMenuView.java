@@ -1,0 +1,121 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package byui.cit260.lostinSpace.view;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Megan
+ */
+public class HelpMenuView {
+    
+    private String menu;
+
+    public HelpMenuView() {
+        this.menu = "\n"
+                  + "\n--------------------------------"
+                  + "|     Help Menu                   |"
+                  + "\n--------------------------------"
+                  + "\nG - What is the goal of the game?"
+                  + "\nM - How to Move"
+                  + "\nF - View Fuel Percentage"
+                  + "\nQ - Quit Game"
+                  + "\n--------------------------------"; 
+    }
+    
+    
+     public void displayHelpMenuView() {
+      
+        boolean done = false;
+        do {
+            String menuOption = this.getMenuOption();
+            if (menuOption.toUpperCase().equals("Q"))
+                return;
+            
+            done = this.doAction(menuOption);
+            
+        } while (!done);
+        }
+      
+      private String getMenuOption() {
+          
+        Scanner keyboard = new Scanner(System.in);
+        String value = "";
+        boolean valid = false;
+        while (!valid) {
+            System.out.println("\n" + this.menu);
+            
+            value =keyboard.nextLine();
+            value =value.trim();
+            if (value.length() < 1){
+                System.out.println("\nInvalid value: value cannot be blank");
+                continue;
+            }
+            break;
+        }
+        return value;
+    }
+      
+      public boolean doAction(String choice) {
+        
+        choice = choice.toUpperCase();
+        
+        switch (choice) {
+            case "G":
+                this.displayGoal();
+                break;
+            case "M":
+                this.howToMove();
+                break;
+            case "F":
+                this.displayFuelPer();
+                break;   
+            default:
+                System.out.println("\n*** Invalid Selection *** Try again");
+                return false;
+        }
+        return true;
+        }
+
+    /*public HelpMenuView() {
+    }
+    
+    private void displayNextView() {
+
+        //create HelpMenuView object
+        HelpMenuView helpMenuView = new HelpMenuView();
+        
+        //display the help menu view
+        helpMenuView.displayHelpMenuView();
+     
+    }*/
+
+    private void displayGoal() {
+         System.out.println("The goal is to return to Earth safely by "
+                 + "navigating your way through space, fighting off "
+                 + "dangerous alien creatures, and collecting helpful "
+                 + "clues and resources to help you along the way.");
+    }
+
+    private void howToMove() {
+        System.out.println("The player jumps from one planet to the "
+                + "other in his spaceship. The player will “look to "
+                + "the stars” to see the four planets they will be "
+                + "able to move to. Will it move them closer to or "
+                + "farther from Earth? The player doesn't know...");
+    }
+
+    private void displayFuelPer() {
+         System.out.println("The player should check the fuel "
+                 + "percentage of the spaceship before traveling "
+                 + "to the next destination. If the fuel level "
+                 + "is less than 20%, the player will need to "
+                 + "earn more fuel before launching to a different "
+                 + "celestial body.");
+    }
+ 
+}
