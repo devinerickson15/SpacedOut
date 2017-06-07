@@ -23,7 +23,7 @@ public class MainMenuView {
         boolean done = false;
         do {
             String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
+            if (menuOption.toUpperCase().equals("E"))
                 return;
             
             done = this.doAction(menuOption);

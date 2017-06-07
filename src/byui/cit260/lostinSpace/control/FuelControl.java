@@ -15,22 +15,20 @@ public class FuelControl {
     
     public int gatherFuel (int planetDepth, int surfaceDensity, int userInput) {
         
-        planetDepth = 1;
-        surfaceDensity = 1;
-       
+ 
        int miningAttempt;
        
-       //Generate random nmber
+       //Generate random nmber between 1-20
         Random randomGenerator = new Random();
-        int randomNumber = randomGenerator.nextInt(20) + 1;
+        int random = randomGenerator.nextInt(20) + 1;
         
-        //Checks for invalid inputs
-        if (userInput > 10 || userInput < 1){
-           return -1;
-       } 
+            //Checks for invalid inputs
+            if (userInput > 10 || userInput < 1){
+                return -1;
+            } 
         
         //equation to determine how much fuel to mine
-        miningAttempt = userInput + randomNumber - surfaceDensity;
+        miningAttempt = userInput + random - surfaceDensity;
         
             //If fuel amount exceeds planet depth, no fuel is collected
            if (miningAttempt > planetDepth){
@@ -39,5 +37,4 @@ public class FuelControl {
         return miningAttempt;
        
     }
-    
 }

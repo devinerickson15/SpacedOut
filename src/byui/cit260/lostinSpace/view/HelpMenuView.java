@@ -23,12 +23,13 @@ public class HelpMenuView {
                   + "\nG - What is the goal of the game?"
                   + "\nM - How to Move"
                   + "\nF - View Fuel Percentage"
+                  + "\nE - Exit Help Menu"
                   + "\nQ - Quit Game"
                   + "\n--------------------------------"; 
     }
     
     
-     public void displayHelpMenuView() {
+    public void displayHelpMenuView() {
       
         boolean done = false;
         do {
@@ -41,7 +42,7 @@ public class HelpMenuView {
         } while (!done);
         }
       
-      private String getMenuOption() {
+    private String getMenuOption() {
           
         Scanner keyboard = new Scanner(System.in);
         String value = "";
@@ -60,7 +61,7 @@ public class HelpMenuView {
         return value;
     }
       
-      public boolean doAction(String choice) {
+    public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();
         
@@ -73,26 +74,16 @@ public class HelpMenuView {
                 break;
             case "F":
                 this.displayFuelPer();
-                break;   
+                break;  
+            case "E":
+                this.returnMainMenu();
+                break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try again");
                 return false;
         }
         return true;
         }
-
-    /*public HelpMenuView() {
-    }
-    
-    private void displayNextView() {
-
-        //create HelpMenuView object
-        HelpMenuView helpMenuView = new HelpMenuView();
-        
-        //display the help menu view
-        helpMenuView.displayHelpMenuView();
-     
-    }*/
 
     private void displayGoal() {
          System.out.println("The goal is to return to Earth safely by "
@@ -116,6 +107,15 @@ public class HelpMenuView {
                  + "is less than 20%, the player will need to "
                  + "earn more fuel before launching to a different "
                  + "celestial body.");
+    }
+
+    private void returnMainMenu() {
+        
+        // Create MainMenuView object
+        MainMenuView mainMenuView = new MainMenuView();
+                
+        //Display the main menu view
+        mainMenuView.displayMainMenuView();
     }
  
 }
