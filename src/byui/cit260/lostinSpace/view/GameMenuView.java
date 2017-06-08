@@ -86,9 +86,9 @@ public class GameMenuView {
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try again");
-                return false;
+                break;
         }
-        return true;
+        return false;
         }
 
     private void startLiftOff() {

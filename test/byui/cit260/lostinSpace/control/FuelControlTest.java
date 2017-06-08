@@ -55,7 +55,7 @@ public class FuelControlTest {
         
         RandomMock random = new RandomMock(5);
         
-        FuelControl.setRandom(random);
+        //FuelControl.setRandom(random);
         
         int expResult = 16; //expected output return value
         int result = instance.gatherFuel(planetDepth, surfaceDensity, userInput);

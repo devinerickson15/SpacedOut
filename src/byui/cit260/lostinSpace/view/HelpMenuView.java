@@ -80,9 +80,9 @@ public class HelpMenuView {
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try again");
-                return false;
+                break;
         }
-        return true;
+        return false;
         }
 
     private void displayGoal() {
