@@ -11,4 +11,6 @@ package byui.cit260.lostinSpace.view;
  */
 public class NavigationMenuView {
     
+    
+    
 }

@@ -92,7 +92,9 @@ public class GameMenuView {
         }
 
     private void startLiftOff() {
-        System.out.println("\n*** startLiftOff() stub function called***");
+          //Display the Navigation menu
+        NavigationMenuView navMenuView = new NavigationMenuView();
+        navMenuView.displayNavigationMenuView();
     }
 
     private void gatherFuel() {
