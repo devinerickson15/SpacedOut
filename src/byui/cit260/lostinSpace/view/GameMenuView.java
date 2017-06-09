@@ -24,6 +24,7 @@ public class GameMenuView {
                   + "\nG - Gather Fuel"
                   + "\nF - View Fuel Percentage"
                   + "\nC - Current Weapon"
+                  + "\nE - Engage Alien"
                   + "\nP - Solve A Puzzle"
                   + "\nS - Save Game"
                   + "\nH - Help"
@@ -79,6 +80,9 @@ public class GameMenuView {
             case "C":
                 this.currentWeapon();
                 break;
+            case "E":
+                this.displayFightMenu();
+                break;
             case "P":
                 this.displayPuzzleMenu();
                 break;
@@ -131,6 +135,11 @@ public class GameMenuView {
         //display the help menu view
         HelpMenuView helpMenuView = new HelpMenuView();
         helpMenuView.displayHelpMenuView();
+    }
+
+    private void displayFightMenu() {
+        FightMenuView fightMenuView = new FightMenuView();
+        fightMenuView.displayFightMenuView();
     }
    
 }
