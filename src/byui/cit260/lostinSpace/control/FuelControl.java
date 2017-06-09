@@ -13,9 +13,10 @@ import java.util.Random;
  */
 public class FuelControl {
     
-    public int gatherFuel (int planetDepth, int surfaceDensity, int userInput) {
+    static public int gatherFuel (int planetDepth, int surfaceDensity, int userInput) {
         
- 
+        planetDepth = 15;
+        surfaceDensity = 7;
        int miningAttempt;
        
        //Generate random nmber between 1-20

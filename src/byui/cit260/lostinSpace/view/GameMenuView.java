@@ -70,7 +70,7 @@ public class GameMenuView {
             case "L":
                 this.startLiftOff();
                 break;
-            case "R":
+            case "G":
                 this.gatherFuel();
                 break;
             case "F":
@@ -96,13 +96,17 @@ public class GameMenuView {
         }
 
     private void startLiftOff() {
-          //Display the Navigation menu
+          
+        //Display the Navigation menu 
         NavigationMenuView navMenuView = new NavigationMenuView();
         navMenuView.displayNavigationMenuView();
     }
 
     private void gatherFuel() {
-        System.out.println("\n*** gatherFuel() stub function called***");
+        
+        //Display the fuel View
+        FuelView fuelView = new FuelView();
+        fuelView.displayFuelView();
     }
 
     private void viewFuelPercentage() {
