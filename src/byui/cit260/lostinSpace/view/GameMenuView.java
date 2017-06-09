@@ -24,6 +24,7 @@ public class GameMenuView {
                   + "\nG - Gather Fuel"
                   + "\nF - View Fuel Percentage"
                   + "\nC - Current Weapon"
+                  + "\nP - Solve A Puzzle"
                   + "\nS - Save Game"
                   + "\nH - Help"
                   + "\nQ - Quit"
@@ -78,6 +79,9 @@ public class GameMenuView {
             case "C":
                 this.currentWeapon();
                 break;
+            case "P":
+                this.displayPuzzleMenu();
+                break;
             case "S":
                 this.saveGame();
                 break;
@@ -107,6 +111,11 @@ public class GameMenuView {
 
     private void currentWeapon() {
         System.out.println("\n*** currentWeapon() stub function called***");
+    }
+    
+    private void displayPuzzleMenu() {
+        PuzzleMenuView puzzMenuView = new PuzzleMenuView();
+        puzzMenuView.displayPuzzleMenuView();
     }
 
     private void saveGame() {
