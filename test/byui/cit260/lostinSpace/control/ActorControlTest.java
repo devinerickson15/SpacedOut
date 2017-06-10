@@ -85,7 +85,7 @@ public class ActorControlTest {
         /*ActorControl instance = new ActorControl();*/
             
         //call function to run test
-        expResult = 15; //expected output of alienHp if the random generator = 40-75 or 35% chance (20-5)
+        expResult = 8; //expected output of alienHp if the random generator = 40-75 or 35% chance (20-5)
         result = instance.attackAlien(weakAttack, mediumAttack, strongAttack, playerHp, alienHp);
         
         //compare expected return value with actual value returned
@@ -105,7 +105,7 @@ public class ActorControlTest {
         /*ActorControl instance = new ActorControl();*/
             
         //call function to run test
-        expResult = 8; //expected result if random generator chooses 18-40 or 23% chance (20-12)
+        expResult = 3; //expected result if random generator chooses 18-40 or 23% chance (20-12)
         result = instance.attackAlien(weakAttack, mediumAttack, strongAttack, playerHp, alienHp);
         
         //compare expected return value with actual value returned
@@ -145,7 +145,7 @@ public class ActorControlTest {
         /*ActorControl instance = new ActorControl();*/
             
         //call function to run test
-        expResult = 76; //expected result if random generator chooses 75-100 or 25% chance (100-(12*2 or 24)
+        expResult = 8; //expected result if random generator chooses 75-100 or 25% chance (100-(12*2 or 24)
         result = instance.attackAlien(weakAttack, mediumAttack, strongAttack, playerHp, alienHp);
         
         //compare expected return value with actual value returned

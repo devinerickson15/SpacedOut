@@ -13,22 +13,21 @@ import java.util.Random;
  */
 public class PuzzleControl {
     
-    public int solvePuzzle(int userInput1, int userInput2, int userInput3, int difficulty, int puzzle){
+    public int solvePuzzle(int userInput1, int userInput2, int userInput3,  int puzzle){
         
-        difficulty = 1;
         
         Random rando = new Random();
         
         int newPuzzle = rando.nextInt(1000) + 1;
         newPuzzle = puzzle;
         
-        int solution = (userInput1 + userInput2 + userInput3);
+        int solution = ((userInput1 + userInput2) * userInput3);
         
         if (solution == puzzle){
-            return 1;
+            return solution;
         }
         else {
-            return -1;
+            return puzzle;
         }
     
     

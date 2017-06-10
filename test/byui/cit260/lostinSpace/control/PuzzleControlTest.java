@@ -40,20 +40,18 @@ public class PuzzleControlTest {
     /**
      * Test of solvePuzzle method, of class PuzzleControl.
      */
-    @Test
+    @Test // 1
     public void testSolvePuzzle() {
         System.out.println("solvePuzzle add use three numbers that add up to 30");
-        int userInput1 = 10;
-        int userInput2 = 10;
-        int userInput3 = 10;
-        int difficulty = 1;
+        int userInput1 = 1;
+        int userInput2 = 14;
+        int userInput3 = 2;
         int puzzle = 30;
         PuzzleControl instance = new PuzzleControl();
-        int expResult = 30;
-        int result = instance.solvePuzzle(userInput1, userInput2, userInput3, difficulty, puzzle);
+        int expResult = puzzle;
+        int result = instance.solvePuzzle(userInput1, userInput2, userInput3, puzzle);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
