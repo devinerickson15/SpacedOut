@@ -6,6 +6,7 @@
 package byui.cit260.lostinSpace.view;
 
 import byui.cit260.lostinSpace.control.GameControl;
+import byui.cit260.lostinSpace.view.ViewInterface.View;
 import java.util.Scanner;
 import lostinspace.LostInSpace;
 
@@ -13,55 +14,22 @@ import lostinspace.LostInSpace;
  *
  * @author Megan
  */
-public class MainMenuView {
-
-    private String menu;
-    
-    
-    public void displayMainMenuView() {
-      
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("E"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        }
-    
-        public MainMenuView() {
-        this.menu = "\n"
+public class MainMenuView extends View{
+  
+       public MainMenuView() {
+                   super(  "\n"
                   + "\n--------------------------------"
                   + "|     Main Menu                   |"
                   + "\n--------------------------------"
                   + "\nN - Start new game"
                   + "\nR - Restore existing game"
                   + "\nH - Get help on how to play the game"
-                  + "\nE - Exit"
-                  + "\n--------------------------------";           
+                  + "\nQ - Quit"
+                  + "\n--------------------------------");           
     }
     
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        while (!valid) {
-            System.out.println("\n" + this.menu);
-            
-            value =keyboard.nextLine();
-            value =value.trim();
-            if (value.length() < 1){
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break;
-        }
-        return value;
-    }
-
+     @Override        
     public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();

@@ -49,15 +49,10 @@ public class FuelControlTest {
         int planetDepth = 15;
         int surfaceDensity = 7;
         int userInput = 8;
-        
-        //Create instance of FuelControl clas
+        int random = 5;
+    
         FuelControl instance = new FuelControl();
-        
-        RandomMock random = new RandomMock(5);
-        
-        //FuelControl.setRandom(random);
-        
-        int expResult = 16; //expected output return value
+        int expResult = 6; //expected output return value
         int result = instance.gatherFuel(planetDepth, surfaceDensity, userInput);
         assertEquals(expResult, result);
         
@@ -69,6 +64,7 @@ public class FuelControlTest {
        planetDepth = 15;
        surfaceDensity = 7;
        userInput = 0;
+       random = 5;
        
         expResult = -1; //expected output return value
         result = instance.gatherFuel(planetDepth, surfaceDensity, userInput);
@@ -82,6 +78,7 @@ public class FuelControlTest {
        planetDepth = 15;
        surfaceDensity = 7;
        userInput = 20;
+       random = 5; 
        
         expResult = -1; //expected output return value
         result = instance.gatherFuel(planetDepth, surfaceDensity, userInput);
@@ -95,6 +92,7 @@ public class FuelControlTest {
        planetDepth = 15;
        surfaceDensity = 7;
        userInput = 300;
+       random = 5;
        
         expResult = -1; //expected output return value
         result = instance.gatherFuel(planetDepth, surfaceDensity, userInput);
@@ -108,8 +106,9 @@ public class FuelControlTest {
        planetDepth = 15;
        surfaceDensity = 7;
        userInput = 1;
+       random = 5; 
        
-        expResult = 9; //expected output return value
+        expResult = 8; //expected output return value
         result = instance.gatherFuel(planetDepth, surfaceDensity, userInput);
         assertEquals(expResult, result);
         
@@ -121,6 +120,7 @@ public class FuelControlTest {
        planetDepth = 15;
        surfaceDensity = 7;
        userInput = 10;
+       random = 5;
        
         expResult = 18; //expected output return value
         result = instance.gatherFuel(planetDepth, surfaceDensity, userInput);
@@ -134,8 +134,9 @@ public class FuelControlTest {
        planetDepth = 15;
        surfaceDensity = 7;
        userInput = 9;
+       random = 5;
        
-        expResult = 17; //expected output return value
+        expResult = 7; //expected output return value
         result = instance.gatherFuel(planetDepth, surfaceDensity, userInput);
         assertEquals(expResult, result);
     }
