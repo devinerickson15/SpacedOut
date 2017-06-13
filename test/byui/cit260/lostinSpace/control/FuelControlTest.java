@@ -63,7 +63,7 @@ public class FuelControlTest {
         
          //*****Test Case #2 ******************
         
-        System.out.println("\tTest Case 2");
+        /**System.out.println("\tTest Case 2");
         
         //Input values for test case 
        planetDepth = 15;
@@ -138,6 +138,7 @@ public class FuelControlTest {
         expResult = 17; //expected output return value
         result = instance.gatherFuel(planetDepth, surfaceDensity, userInput);
         assertEquals(expResult, result);
-    }
+    */
+     }
     
 }
