@@ -20,7 +20,7 @@ public class SolvePuzzleView extends View{
 
     public SolvePuzzleView() {
         
-        this.promptMessage = "\n Enter the solution for 'X'";
+        super("");
                
         this.displayDescription();
        
