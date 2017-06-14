@@ -13,23 +13,21 @@ import java.util.Scanner;
  * @author devinerickson
  */
 public class PuzzleControl {
-         
-        static public Random randomGenerator = new Random();
-        static int puzzle = randomGenerator.nextInt(100);
-         
+    
+        static Random randomGenerator = new Random();
+        static int puzzle = randomGenerator.nextInt(100) + 1;
+
     static public int solvePuzzle(int solution){
-        
-            
-        
-            //Checks for invalid inputs
+
+ //Checks for invalid inputs
             if (solution > 100 || solution < 1){
                 return -1;
             } 
         
-        //equation to determine how much fuel to mine
-        int guess = ((1 + solution) * solution);
+   
+        int guess = (1 + solution - 1);
         
-            //If fuel amount exceeds planet depth, no fuel is collected
+  
            if (puzzle < guess){
                 return 0;
             }

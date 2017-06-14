@@ -54,7 +54,7 @@ public class SolvePuzzleView extends View{
             if(check == -1) {
                 System.out.println("!!!***  Try using a number with the range given  ***!!!"
                                                 + "\n-----Please try again------");
-                return true;
+                return false;
             } 
             else if (check == 0) {
                 System.out.println("Oops... your number is to high,"
@@ -65,11 +65,6 @@ public class SolvePuzzleView extends View{
                 System.out.println("Oops... your number is to low,"
                     + "\n-----Please try again------");
                 return false;
-            }
-            else if( check == 2){
-                System.out.println("NICE");
-                return true;
-                
             }
             
             this.displayNextView(check);
