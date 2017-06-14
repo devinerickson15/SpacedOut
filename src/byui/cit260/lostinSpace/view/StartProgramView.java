@@ -22,7 +22,7 @@ public class StartProgramView extends View{
         
      public StartProgramView() {
         
-       this.promptMessage = "\nPlease enter your name: ";
+       super("\nPlease enter your name: ");
         
        // display banner
        this.displayBanner();
