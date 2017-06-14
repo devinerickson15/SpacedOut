@@ -13,68 +13,25 @@ import java.util.Objects;
  */
 public class Puzzle implements Serializable{
     
-    private int userInput1;
-    private int userInput2;
-    private int userInput3;
-    private int difficulty;
-    private int puzzle;
+    private int solution;
 
-    public Puzzle() {
+    public int getSolution() {
+        return solution;
     }
 
-    public int getUserInput1() {
-        return userInput1;
+    public void setSolution(int solution) {
+        this.solution = solution;
     }
 
-    public void setUserInput1(int userInput1) {
-        this.userInput1 = userInput1;
-    }
-
-    public int getUserInput2() {
-        return userInput2;
-    }
-
-    public void setUserInput2(int userInput2) {
-        this.userInput2 = userInput2;
-    }
-
-    public int getUserInput3() {
-        return userInput3;
-    }
-
-    public void setUserInput3(int userInput3) {
-        this.userInput3 = userInput3;
-    }
-
-    public int getDifficulty() {
-        return difficulty;
-    }
-
-    public void setDifficulty(int difficulty) {
-        this.difficulty = difficulty;
-    }
-
-    public int getPuzzle() {
-        return puzzle;
-    }
-
-    public void setPuzzle(int puzzle) {
-        this.puzzle = puzzle;
-    }
-
-    @Override
+        @Override
     public String toString() {
-        return "Puzzle{" + "userInput1=" + userInput1 + ", userInput2=" + userInput2 + ", userInput3=" + userInput3 + ", difficulty=" + difficulty + ", puzzle=" + puzzle + '}';
+        return "Puzzle{" + "solution=" + solution + '}';
     }
-
+    
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 71 * hash + this.userInput1;
-        hash = 71 * hash + this.userInput2;
-        hash = 71 * hash + this.userInput3;
-        hash = 71 * hash + this.difficulty;
-        hash = 71 * hash + this.puzzle;
+        int hash = 3;
+        hash = 37 * hash + this.solution;
         return hash;
     }
 
@@ -90,24 +47,10 @@ public class Puzzle implements Serializable{
             return false;
         }
         final Puzzle other = (Puzzle) obj;
-        if (this.userInput1 != other.userInput1) {
-            return false;
-        }
-        if (this.userInput2 != other.userInput2) {
-            return false;
-        }
-        if (this.userInput3 != other.userInput3) {
-            return false;
-        }
-        if (this.difficulty != other.difficulty) {
-            return false;
-        }
-        if (this.puzzle != other.puzzle) {
+        if (this.solution != other.solution) {
             return false;
         }
         return true;
     }
-    
-
-    
+  
 }
