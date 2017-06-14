@@ -5,82 +5,85 @@
  */
 package byui.cit260.lostinSpace.view;
 
+import byui.cit260.lostinSpace.control.PuzzleControl;
+import byui.cit260.lostinSpace.view.ViewInterface.View;
+import java.util.Random;
 import java.util.Scanner;
 
 /**
  *
  * @author devinerickson
  */
-public class SolvePuzzleView {
+public class SolvePuzzleView extends View{
     
     private String promptMessage;
-    
+
     public SolvePuzzleView() {
         
-        this.promptMessage = "\n Please give 3 numerical inputs, separated "
-                + "                             \nby commas, in order to solve your puzzle.";
-        
+        this.promptMessage = "\n Enter the solution for 'X'";
+               
         this.displayDescription();
-        
+       
     }
     
     private void displayDescription() {
-        System.out.println(
-                    "\n*******************************************************"
+        System.out.println("\n*******************************************************"
                 +  "\nIn order to progress you will be required to solve a"
-                +  "\n mathmatical puzzle. You will be given the answer,  "
-                +  "\nand your job will be to use three integers to arrive at "
-                +  "\n the given number. Use the following as a guide to "
-                +  "\nfinding the solution"
+                +  "\npuzzle. Deduction skills will come in handy here."
+                +  "\n "
+                +  "\nYour job will be to guess different numbers.  "
+                +  "\n Use the following as a guide to find the solution"
                 +  "\n"
-                +  "\nX=A+B*C"
                 +  "\n"
-                +  "\nWhere your inputs will be 'A','B', and 'C'."
+                +  "\nThe number you are trying to find will be between"
+                +  "\n 1 and 100. Let's see how many guess it takes!"
                 +  "\n"
-                +  "\n---------Take Luck---------"
-                +  "\n*******************************************************"
-        );
+                +  "\n               ---------Take Luck---------"
+                +  "\n*******************************************************");
     }
-    
-    public void displayPuzzleView() {
         
-        boolean done = false;
-        do {
-            String userChoice = this.getUserInput();
-            if(userChoice.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(userChoice);
-            
-        } while(!done);
-    }
-    
-    private String getUserInput() {
+    @Override
+    public boolean doAction(String choice) {
         
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
+        String input = choice;
         
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-            
-            value =keyboard.nextLine();
-            value =value.trim();
-            
-            if (value.length() < 1){
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
+        int X = Integer.parseInt(input);
+        
+        int check = PuzzleControl.solvePuzzle(X);
+        
+            if(check == -1) {
+                System.out.println("!!!***  Try using a number with the range given  ***!!!"
+                                                + "\n-----Please try again------");
+                return true;
+            } 
+            else if (check == 0) {
+                System.out.println("Oops... your number is to high,"
+                    + "\n-----Please try again------");
+                return false;
+            }
+            else if(check == 1){
+                System.out.println("Oops... your number is to low,"
+                    + "\n-----Please try again------");
+                return false;
+            }
+            else if( check == 2){
+                System.out.println("NICE");
+                return true;
+                
             }
             
-            break;
+            this.displayNextView(check);
+            
+            return true;
+        
+        }
+
+    private void displayNextView(int check) {
+        
+        System.out.println("\n###############################"
+            + "\n| You have solved the puzzle! |"
+            + "\n| Good Luck in your travels   |"
+            + "\n###############################");
         }
         
-        return value;
     }
-
-    private boolean doAction(String userChoice) {
-        return false;
-       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-}

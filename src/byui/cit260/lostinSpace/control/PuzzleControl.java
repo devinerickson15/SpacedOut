@@ -13,49 +13,35 @@ import java.util.Scanner;
  * @author devinerickson
  */
 public class PuzzleControl {
-    
-/*    private String prompInstruct;
-    
-    public PuzzleControl(){
-        this.prompInstruct = "\n Please enter 3 number with a space between\n each (ie 1 34 5)"
-   
-        this.solvePuzzle(userInput1, userInput2, userInput3, puzzle);
-                }
-    
-    Scanner keyboard = new Scanner( System.in );
-    
-    String input = keyboard.nextLine();
-    String[] numbersStr = input.split("");
-    
-    
-    int[] numbers = new int[ numbersStr.length ];
-    int i = 0;
-    for ( i = 0; i < numberStr.length; i++)
-    {
-        number[i] = Integer.parseInt(numberStr[i]);
-        System.out.print(numbers[i] + "nice");
-    }
-    System.ount.println(correctAnswer);
-**/
-    
-    public int solvePuzzle(int userInput1, int userInput2, int userInput3,  int puzzle){
+         
+        static public Random randomGenerator = new Random();
+        static int puzzle = randomGenerator.nextInt(100);
+         
+    static public int solvePuzzle(int solution){
         
+            
         
-        Random rando = new Random();
+            //Checks for invalid inputs
+            if (solution > 100 || solution < 1){
+                return -1;
+            } 
         
-        int newPuzzle = rando.nextInt(1000) + 1;
-        newPuzzle = puzzle;
+        //equation to determine how much fuel to mine
+        int guess = ((1 + solution) * solution);
         
-        int solution = ((userInput1 + userInput2) * userInput3);
-        
-        if (solution == puzzle){
-            return solution;
+            //If fuel amount exceeds planet depth, no fuel is collected
+           if (puzzle < guess){
+                return 0;
+            }
+           
+           if (puzzle > guess){
+               return 1;
+           }
+           else if(puzzle == guess){
+               return 2;
+           }
+           
+        return guess;
         }
-        else {
-            return puzzle;
-        }
-    
-    
-    }
     
 }

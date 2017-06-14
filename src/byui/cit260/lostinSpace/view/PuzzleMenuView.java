@@ -5,18 +5,19 @@
  */
 package byui.cit260.lostinSpace.view;
 
+import byui.cit260.lostinSpace.view.ViewInterface.View;
 import java.util.Scanner;
 
 /**
  *
  * @author Kevin
  */
-public class PuzzleMenuView {
+public class PuzzleMenuView extends View{
       
      private String menu;
     
     public PuzzleMenuView() {
-        this.menu = "\n"
+        super("\n"
                   + "\n--------------------------------"
                   + "|      Puzzle Menu                   |"
                   + "\n--------------------------------"
@@ -24,47 +25,17 @@ public class PuzzleMenuView {
                   + "\nM - Map"
                   + "\nH - Help"
                   + "\nQ - Exit"
-                  + "\n--------------------------------";           
-    }
-    
-    public void displayPuzzleMenuView() {
-      
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        }
-    
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        while (!valid) {
-            System.out.println("\n" + this.menu);
-            
-            value =keyboard.nextLine();
-            value =value.trim();
-            if (value.length() < 1){
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break;
-        }
-        return value;
+                  + "\n--------------------------------");           
     }
 
+     @Override
     public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();
         
         switch (choice) {
             case "S":
-                this.startPuzzle();
+                this.displaySolvePuzzleView();
                 break;
             case "M":
                 this.startMap();
@@ -79,8 +50,9 @@ public class PuzzleMenuView {
         return false;
         }
 
-    private void startPuzzle() {
-                System.out.println("\n*** startPuzzle() stub function called***");
+    private void displaySolvePuzzleView() {
+               SolvePuzzleView solvePuzz = new SolvePuzzleView();
+               solvePuzz.display();
     }
 
     private void startMap() {
@@ -92,6 +64,6 @@ public class PuzzleMenuView {
         
         //display the help menu view
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.displayH();
     }  
 }

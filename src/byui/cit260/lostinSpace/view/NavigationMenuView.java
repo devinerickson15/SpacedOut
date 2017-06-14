@@ -5,18 +5,19 @@
  */
 package byui.cit260.lostinSpace.view;
 
+import byui.cit260.lostinSpace.view.ViewInterface.View;
 import java.util.Scanner;
 
 /**
  *
  * @author Devin
  */
-public class NavigationMenuView {
+public class NavigationMenuView extends View{
     
      private String menu;
     
     public NavigationMenuView() {
-        this.menu = "\n"
+        super ("\n"
                   + "\n--------------------------------"
                   + "|     Navigation Menu                   |"
                   + "\n--------------------------------"
@@ -29,41 +30,11 @@ public class NavigationMenuView {
                   + "\nL - Luna"
                   + "\nE - Earth"
                   + "\nH - Help"
-                  + "\nQ - Exit"
-                  + "\n--------------------------------";           
-    }
-    
-    public void displayNavigationMenuView() {
-      
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        }
-    
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        while (!valid) {
-            System.out.println("\n" + this.menu);
-            
-            value =keyboard.nextLine();
-            value =value.trim();
-            if (value.length() < 1){
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break;
-        }
-        return value;
+                  + "\nQ - Quit"
+                  + "\n--------------------------------");           
     }
 
+     @Override
     public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();
@@ -140,6 +111,6 @@ public class NavigationMenuView {
         
         //display the help menu view
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.display();
     }
 }
