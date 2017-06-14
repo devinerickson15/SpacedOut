@@ -6,13 +6,14 @@
 package byui.cit260.lostinSpace.view;
 
 import byui.cit260.lostinSpace.control.FuelControl;
+import byui.cit260.lostinSpace.view.ViewInterface.View;
 import java.util.Scanner;
 
 /**
  *
  * @author Megan
  */
-public class FuelView {
+public class FuelView extends View{
     
     private String promptMessage;
 
@@ -39,42 +40,7 @@ public class FuelView {
         );
     }
     
-     public void displayFuelView() {
-      
-        boolean done = false;
-        do {
-            String userChoice = this.getUserInput();
-            if (userChoice.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(userChoice);
-            
-        } while (!done);
-        }
-    
-    private String getUserInput() {
- 
-        Scanner keyboard = new Scanner(System.in); //get infile for keyboard
-        String value = ""; // value to be returned 
-        boolean valid = false; //initialize to not valid
-        
-        while (!valid) {// loop WHILE an invalid value is entered
-            System.out.println("\n" + this.promptMessage);
-            
-            value = keyboard.nextLine(); //GET next line typed on keyboard
-            value = value.trim(); //TRIM leading and trailing blanks 
-            
-            if (value.length() <1) {// value is blank
-                    System.out.println("\nInvalid value: value cannot be blank");
-                    continue;
-            }
-            
-            break; // end the loop
-        }
-           
-        return value; // return the value entered
-    }
-    
+    @Override
     public boolean doAction(String userChoice) {
         
         String input = userChoice;
