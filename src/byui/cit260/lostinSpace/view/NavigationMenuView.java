@@ -140,6 +140,6 @@ public class NavigationMenuView {
         
         //display the help menu view
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.display();
     }
 }

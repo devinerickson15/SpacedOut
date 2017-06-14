@@ -5,18 +5,19 @@
  */
 package byui.cit260.lostinSpace.view;
 
+import byui.cit260.lostinSpace.view.ViewInterface.View;
 import java.util.Scanner;
 
 /**
  *
  * @author Megan
  */
-public class GameMenuView {
+public class GameMenuView extends View{
     
     private String menu;
     
     public GameMenuView() {
-        this.menu = "\n"
+               super("\n"
                   + "\n--------------------------------"
                   + "|     Game Menu                   |"
                   + "\n--------------------------------"
@@ -29,40 +30,10 @@ public class GameMenuView {
                   + "\nS - Save Game"
                   + "\nH - Help"
                   + "\nQ - Quit"
-                  + "\n--------------------------------";           
+                  + "\n--------------------------------");           
     }
     
-    public void displayMenu() {
-      
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        }
-    
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        while (!valid) {
-            System.out.println("\n" + this.menu);
-            
-            value =keyboard.nextLine();
-            value =value.trim();
-            if (value.length() < 1){
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break;
-        }
-        return value;
-    }
-
+    @Override
     public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();
@@ -110,7 +81,7 @@ public class GameMenuView {
         
         //Display the fuel View
         FuelView fuelView = new FuelView();
-        fuelView.displayFuelView();
+        fuelView.display();
     }
 
     private void viewFuelPercentage() {
@@ -134,7 +105,7 @@ public class GameMenuView {
         
         //display the help menu view
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.display();
     }
 
     private void displayFightMenu() {

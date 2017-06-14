@@ -24,8 +24,7 @@ public interface ViewInterface {
         public View() {
             
         }
-        
-        
+
         public View(String message) {
             this.displayMessage = message;
         }

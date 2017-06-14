@@ -92,6 +92,6 @@ public class PuzzleMenuView {
         
         //display the help menu view
         HelpMenuView helpMenuView = new HelpMenuView();
-        helpMenuView.displayHelpMenuView();
+        helpMenuView.display();
     }  
 }
