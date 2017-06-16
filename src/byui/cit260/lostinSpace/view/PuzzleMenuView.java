@@ -14,8 +14,6 @@ import java.util.Scanner;
  */
 public class PuzzleMenuView extends View{
       
-     private String menu;
-    
     public PuzzleMenuView() {
         super("\n"
                   + "\n--------------------------------"

@@ -15,11 +15,9 @@ import java.util.Scanner;
  */
 public class FuelView extends View{
     
-    private String promptMessage;
-
     public FuelView() {
         
-        this.promptMessage = "\n Please enter the amount of fuel you wish to gather.";
+        super("\n Please enter the amount of fuel you wish to gather.");
         
         this.displayDescription();
     

@@ -5,60 +5,29 @@
  */
 package byui.cit260.lostinSpace.view;
 
+import byui.cit260.lostinSpace.view.ViewInterface.View;
 import java.util.Scanner;
 
 /**
  *
  * @author JacobsonKe
  */
-public class FightMenuView {
-    
-    private String menu;
+public class FightMenuView extends View{
     
     public FightMenuView() {
-        this.menu = "\n"
+        super ("\n"
                 + "\n----------------------------------"
                 + "\n      Battle Alien Menu           "
                 + "\n----------------------------------"
                 + "\n B - Battle alien                 "
                 + "\n F - Flee from alien              "
                 + "\n T - Throw dirt and scream        "
-                + "\n Q - Quit to Main Menu            "
-                + "\n----------------------------------"; 
+                + "\n Q - Quit to Game Menu            "
+                + "\n----------------------------------"); 
     }
     
-    public void displayFightMenuView() {
-        
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-        while (!valid) {
-            System.out.println("\n" + this.menu);
-            
-            value =keyboard.nextLine();
-            value =value.trim();
-            if (value.length() < 1){
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-            break;
-        }
-        return value;
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         
         choice = choice.toUpperCase();
         

@@ -57,12 +57,12 @@ public class SolvePuzzleView extends View{
                 return false;
             } 
             else if (check == 0) {
-                System.out.println("Oops... your number is to high,"
+                System.out.println("Oops... your number is too high,"
                     + "\n-----Please try again------");
                 return false;
             }
             else if(check == 1){
-                System.out.println("Oops... your number is to low,"
+                System.out.println("Oops... your number is too low,"
                     + "\n-----Please try again------");
                 return false;
             }
