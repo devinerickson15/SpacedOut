@@ -6,7 +6,7 @@
 package byui.cit260.lostinSpace.view;
 
 import byui.cit260.lostinSpace.control.FuelControl;
-import byui.cit260.lostinSpace.model.AltViewInterface.AltView;
+//import byui.cit260.lostinSpace.model.AltViewInterface.AltView;
 import byui.cit260.lostinSpace.view.ViewInterface.View;
 
 /**
@@ -15,35 +15,48 @@ import byui.cit260.lostinSpace.view.ViewInterface.View;
  */
 public class FuelPercentageView{
     
+    private String promptMessage;
+    
+    private int percent = FuelControl.percentFuel();
+    
     public FuelPercentageView() {
-
-        this.displayBanner();
+                        
+        this.displayDescription();
     }
     
-    public void displayBanner() {
-        System.out.println("\n ***Liftoff requires a minimum of 20% of "
-                + "your spaceship’s fuel capacity. ***");
+    public void displayDescription() {
+        System.out.println("\n ***You currently have " + percent +"% fuel.***"
+                + "\n "
+                + "\n ***Liftoff requires a minimum of 20% of "
+                + "\n your spaceship’s fuel capacity. ***");
     }
     
-    public boolean doAction(int percent) {
+    /**@Override
+    public boolean doAction() {
+          
         
-        percent = FuelControl.percentFuel(percent); 
+        
+        //int X = Integer.parseInt(input);
+        
+        int percent = FuelControl.percentFuel(); 
             
             //prints line if fuel is below 20%
            if (percent == -2) {  
                 System.out.println("***Your spaceship has " 
                         + percent + "% fuel remaining."
                         + "\n WARNING: Low on fuel. ADD fuel now! ");
-                return true;
+                return false;
             }
 
         this.displayNextView(percent);
     
         return true; //success!
-           
     }
+    */
+    
 
-    private void displayNextView(int percent) {
+    
+   /** private void displayNextView(int percent) {
         
         // Display a custom welcome message
         System.out.println("\n========================================================"
@@ -51,5 +64,7 @@ public class FuelPercentageView{
                         + "\n========================================================="
                          );
     }
+*/
+
     
 }

@@ -88,7 +88,7 @@ public class GameMenuView extends View{
     private void viewFuelPercentage() {
     
         FuelPercentageView fuelPercView = new FuelPercentageView();
-        fuelPercView.displayBanner();
+        fuelPercView.displayDescription();
     }
 
     private void currentWeapon() {
