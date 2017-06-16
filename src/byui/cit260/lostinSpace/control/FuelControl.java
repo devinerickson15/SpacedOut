@@ -35,7 +35,26 @@ public class FuelControl {
            if (miningAttempt > planetDepth){
                 return 0;
             }
+        
+        //Pass miningAttempt variable to percentFuel() function
+        percentFuel(miningAttempt);
+           
         return miningAttempt;
        
+    }
+    
+    static public int percentFuel(int currentFuel) {
+        
+        //Fuel tank capacity
+        int fuelCapacity = 30;
+        
+        //calculate percent
+        currentFuel = (currentFuel/ fuelCapacity) * 100;
+        
+            if (currentFuel < 20) {
+                return -2;
+            }
+        
+        return currentFuel;
     }
 }

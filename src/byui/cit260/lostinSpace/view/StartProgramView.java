@@ -17,9 +17,7 @@ import java.util.Scanner;
 public class StartProgramView extends View{
     
     private String promptMessage;
-
- 
-        
+   
      public StartProgramView() {
         
        super("\nPlease enter your name: ");
