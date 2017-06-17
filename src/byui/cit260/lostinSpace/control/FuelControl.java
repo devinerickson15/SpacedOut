@@ -43,9 +43,9 @@ public class FuelControl {
        
     }
     
-    static public int percentFuel() {
+    static public int percentFuel(int currentFuel) {
         
-        int currentFuel = 100;
+        //currentFuel = 100;
         
         //Fuel tank capacity
         int fuelCapacity = 30;
@@ -58,9 +58,5 @@ public class FuelControl {
             }
         
         return currentFuel;
-    }
-
-    private static void percentFuel(int miningAttempt) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

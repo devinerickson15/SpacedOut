@@ -86,9 +86,10 @@ public class GameMenuView extends View{
     }
 
     private void viewFuelPercentage() {
-    
-        FuelPercentageView fuelPercView = new FuelPercentageView();
-        fuelPercView.displayDescription();
+        
+        System.out.println("\n*** viewFuelPerenctage() stub function called***");
+        //FuelPercentageView fuelPercView = new FuelPercentageView();
+       // fuelPercView.displayDescription();
     }
 
     private void currentWeapon() {

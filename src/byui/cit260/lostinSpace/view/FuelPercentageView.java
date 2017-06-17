@@ -17,7 +17,7 @@ public class FuelPercentageView{
     
     private String promptMessage;
     
-    private int percent = FuelControl.percentFuel();
+   /*private int percent = FuelControl.percentFuel();
     
     public FuelPercentageView() {
                         
@@ -31,13 +31,9 @@ public class FuelPercentageView{
                 + "\n your spaceship’s fuel capacity. ***");
     }
     
-    /**@Override
+    @Override
     public boolean doAction() {
-          
-        
-        
-        //int X = Integer.parseInt(input);
-        
+    
         int percent = FuelControl.percentFuel(); 
             
             //prints line if fuel is below 20%
