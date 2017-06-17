@@ -95,8 +95,8 @@ public class GameMenuView extends View{
     }
 
     private void currentWeapon() {
-        System.out.println("\n*** currentWeapon() stub function called***");
-                
+        CurrentWeaponView weaponView = new CurrentWeaponView();
+        weaponView.display();        
     }
     
     private void displayPuzzleMenu() {
