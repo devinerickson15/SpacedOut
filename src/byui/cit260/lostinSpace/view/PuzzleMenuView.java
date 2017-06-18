@@ -17,12 +17,12 @@ public class PuzzleMenuView extends View{
     public PuzzleMenuView() {
         super("\n"
                   + "\n--------------------------------"
-                  + "|      Puzzle Menu                   |"
+                  + "|             Puzzle Menu            |"
                   + "\n--------------------------------"
-                  + "\nS - Solve A Puzzle"
+                  + "\nP - Puzzle"
                   + "\nM - Map"
                   + "\nH - Help"
-                  + "\nQ - Exit"
+                  + "\nQ - Quit to Game Menu"
                   + "\n--------------------------------");           
     }
 
@@ -32,7 +32,7 @@ public class PuzzleMenuView extends View{
         choice = choice.toUpperCase();
         
         switch (choice) {
-            case "S":
+            case "P":
                 this.displaySolvePuzzleView();
                 break;
             case "M":

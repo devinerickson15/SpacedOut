@@ -19,7 +19,7 @@ public class GameMenuView extends View{
     public GameMenuView() {
                super("\n"
                   + "\n--------------------------------"
-                  + "|          Game Menu                   |"
+                  + "\n|          Game Menu               |"
                   + "\n--------------------------------"
                   + "\nL - Lift Off"
                   + "\nG - Gather Fuel"
@@ -29,7 +29,7 @@ public class GameMenuView extends View{
                   + "\nP - Solve A Puzzle"
                   + "\nS - Save Game"
                   + "\nH - Help"
-                  + "\nQ - Quit"
+                  + "\nQ - Quit to Main Menu"
                   + "\n--------------------------------");           
     }
 

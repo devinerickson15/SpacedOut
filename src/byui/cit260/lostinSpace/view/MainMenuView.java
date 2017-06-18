@@ -21,10 +21,10 @@ public class MainMenuView extends View{
                   + "\n--------------------------------"
                   + "|     Main Menu                   |"
                   + "\n--------------------------------"
-                  + "\nN - Start new game"
-                  + "\nR - Restore existing game"
-                  + "\nH - Get help on how to play the game"
-                  + "\nQ - Quit"
+                  + "\nN - Start New Game"
+                  + "\nR - Restore Existing Game"
+                  + "\nH - Get Help On How To Play The Game"
+                  + "\nQ - Quit Game!"
                   + "\n--------------------------------");           
     }
     
