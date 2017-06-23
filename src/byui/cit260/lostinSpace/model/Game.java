@@ -14,8 +14,17 @@ import java.util.Objects;
  * @author Megan
  */
 public class Game implements Serializable{
+    
     private String name;
     private double totalTime;
+    
+    private Player player;
+    private Inventory[] inventory;
+    private Map map;
+    private Weapon[] weapons;
+    private Fuel fuel;
+    private Alien[] aliens;
+    
 
     public Game() {
     }
@@ -69,8 +78,30 @@ public class Game implements Serializable{
             return false;
         }
         return true;
+    }   
+
+    public void setPlayer(Player player) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
+    public void setInventory(Inventory[] inventoryList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setMap(Map map) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setWeapon(Weapon[] weaponList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setFuel(Fuel fuel) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void setAlien(Alien[] alienList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
 
