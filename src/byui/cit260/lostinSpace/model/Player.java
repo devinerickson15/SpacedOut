@@ -7,6 +7,7 @@
 package byui.cit260.lostinSpace.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -18,11 +19,11 @@ public class Player implements Serializable{
     // classs instance variables
     private String name;
     private double highScore;
-    
-    public Player() {
-        
-    }
+    private String location[]; 
 
+    public Player() {
+    }
+    
     public String getName() {
         return name;
     }
@@ -38,17 +39,27 @@ public class Player implements Serializable{
     public void setHighScore(double highScore) {
         this.highScore = highScore;
     }
-    
-   @Override
+
+    public String[] getLocation() {
+        return location;
+    }
+
+    public void setLocation(String[] location) {
+        this.location = location;
+    }
+
+    @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", highScore=" + highScore + '}';
+        return "Player{" + "name=" + name + ", highScore=" + highScore + ", location=" + location + '}';
     }
     
+
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 53 * hash + Objects.hashCode(this.name);
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.highScore) ^ (Double.doubleToLongBits(this.highScore) >>> 32));
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.name);
+        hash = 89 * hash + (int) (Double.doubleToLongBits(this.highScore) ^ (Double.doubleToLongBits(this.highScore) >>> 32));
+        hash = 89 * hash + Arrays.deepHashCode(this.location);
         return hash;
     }
 
@@ -70,10 +81,10 @@ public class Player implements Serializable{
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
+        if (!Arrays.deepEquals(this.location, other.location)) {
+            return false;
+        }
         return true;
     }
-    
-    
-    
-    
+      
 }

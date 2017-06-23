@@ -5,7 +5,7 @@
  */
 package lostinspace;
 
-import byui.cit260.lostinSpace.model.Actor;
+
 import byui.cit260.lostinSpace.model.Game;
 import byui.cit260.lostinSpace.model.Map;
 import byui.cit260.lostinSpace.model.Alien;
