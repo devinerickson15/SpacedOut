@@ -16,12 +16,25 @@ import java.util.Objects;
  */
 public class Player implements Serializable{
     
-    // classs instance variables
+    // class instance variables  
+    
     private String name;
     private double highScore;
-    private String location[]; 
+    private String location; 
+    
+    //Default constructor
+    public Player() {  
+        
+    }
+    
+    //Convenience constructor
+    public Player(String name, double highScore, String location){
+        
+        setName(name);
+        setHighScore(highScore);
+        setLocation(location);
 
-    public Player() {
+        
     }
     
     public String getName() {
@@ -40,11 +53,11 @@ public class Player implements Serializable{
         this.highScore = highScore;
     }
 
-    public String[] getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(String[] location) {
+    public void setLocation(String location) {
         this.location = location;
     }
 
@@ -54,7 +67,7 @@ public class Player implements Serializable{
     }
     
 
-    @Override
+    /*@Override
     public int hashCode() {
         int hash = 7;
         hash = 89 * hash + Objects.hashCode(this.name);
@@ -62,7 +75,7 @@ public class Player implements Serializable{
         hash = 89 * hash + Arrays.deepHashCode(this.location);
         return hash;
     }
-
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -86,5 +99,5 @@ public class Player implements Serializable{
         }
         return true;
     }
-      
+    */  
 }
