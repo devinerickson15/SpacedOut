@@ -6,6 +6,7 @@
 package byui.cit260.lostinSpace.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -14,51 +15,30 @@ import java.util.Objects;
  */
 public class Map implements Serializable{
     
-    private String currentLocation;
-    private String previousLocation;
-    private String nextLocation;
+    private Planet[] location;
 
     public Map() {
     }
-
-    public String getCurrentLocation() {
-        return currentLocation;
+    
+    public Planet[] getLocation() {
+        return location;
     }
 
-    public void setCurrentLocation(String currentLocation) {
-        this.currentLocation = currentLocation;
+    public void setLocation(Planet[] location) {
+        this.location = location;
     }
 
-    public String getPreviousLocation() {
-        return previousLocation;
-    }
-
-    public void setPreviousLocation(String previousLocation) {
-        this.previousLocation = previousLocation;
-    }
-
-    public String getNextLocation() {
-        return nextLocation;
-    }
-
-    public void setNextLocation(String nextLocation) {
-        this.nextLocation = nextLocation;
+    @Override
+    public String toString() {
+        return "Map{" + "location=" + location + '}';
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.currentLocation);
-        hash = 67 * hash + Objects.hashCode(this.previousLocation);
-        hash = 67 * hash + Objects.hashCode(this.nextLocation);
+        hash = 89 * hash + Arrays.deepHashCode(this.location);
         return hash;
     }
-
-    @Override
-    public String toString() {
-        return "Map{" + "currentLocation=" + currentLocation + ", previousLocation=" + previousLocation + ", nextLocation=" + nextLocation + '}';
-    }
-
 
     @Override
     public boolean equals(Object obj) {
@@ -72,18 +52,10 @@ public class Map implements Serializable{
             return false;
         }
         final Map other = (Map) obj;
-        if (!Objects.equals(this.currentLocation, other.currentLocation)) {
-            return false;
-        }
-        if (!Objects.equals(this.previousLocation, other.previousLocation)) {
-            return false;
-        }
-        if (!Objects.equals(this.nextLocation, other.nextLocation)) {
+        if (!Arrays.deepEquals(this.location, other.location)) {
             return false;
         }
         return true;
     }
-    
-    
-    
+
 }

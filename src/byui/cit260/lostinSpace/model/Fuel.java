@@ -13,6 +13,7 @@ import java.util.Objects;
  */
 public class Fuel implements Serializable {
     
+    
     private String collectFuel;
     private double storeFuel;
 

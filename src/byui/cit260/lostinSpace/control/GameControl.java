@@ -59,8 +59,44 @@ public class GameControl {
     }
 
     private static Inventory[] createInventoryList() {
-        System.out.println("\n**** createInventoryList function called ***");
-        return null; 
+        
+        Inventory[] inventory = new Inventory[6];
+        
+        Inventory weapon1 = new Inventory();
+        weapon1.setWeapons("Blow Gun");
+        inventory[Item.blow.ordinal()] = weapon1;
+        
+        Inventory weapon2 = new Inventory();
+        weapon2.setWeapons("Ray Gun");
+        inventory[Item.ray.ordinal()] = weapon2;
+        
+        Inventory weapon3 = new Inventory();
+        weapon3.setWeapons("Lava Shooter");
+        inventory[Item.lava.ordinal()] = weapon3;
+        
+        //It flings poop
+        Inventory weapon4 = new Inventory();
+        weapon4.setWeapons("Poop Flinger");
+        inventory[Item.poop.ordinal()] = weapon4;
+        
+        Inventory weapon5 = new Inventory();
+        weapon5.setWeapons("Slingshot");
+        inventory[Item.slingshot.ordinal()] = weapon5;
+        
+        Inventory weapon6 = new Inventory();
+        weapon6.setWeapons("The Terminator");
+        inventory[Item.terminator.ordinal()] = weapon6;
+        
+        return inventory; 
+    }
+    
+    public enum Item {
+        blow,
+        ray,
+        lava,
+        poop,
+        slingshot,
+        terminator;
     }
 
     private static Weapon[] createWeaponList() {
@@ -73,6 +109,10 @@ public class GameControl {
         return null; 
     }
     
+    public static void createMap(Game game){
+        Map map = MapControl.createMap();
+        game.setMap(map);
+    }
     
     
 }

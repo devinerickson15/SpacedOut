@@ -45,6 +45,10 @@ public class Game implements Serializable{
         this.totalTime = totalTime;
     }
 
+    public Map getMap(){
+        return map;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 7;
@@ -88,8 +92,8 @@ public class Game implements Serializable{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setMap(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setMap(Map newMap) {
+        map = newMap;
     }
 
     public void setWeapon(Weapon[] weaponList) {

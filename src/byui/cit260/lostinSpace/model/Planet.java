@@ -25,6 +25,14 @@ public class Planet implements Serializable {
     //Public 
     public Planet(){
     }
+    
+    public Planet(String name, String desc, int currentLocation, int planetDepth, int surfaceDensity){
+        setName(name);
+        setDesc(desc);
+        setCurrentLocation(currentLocation);
+        setPlanetDepth(planetDepth);
+        setSurfaceDensity(surfaceDensity);
+    }
 
     public String getName() {
         return name;
@@ -45,7 +53,25 @@ public class Planet implements Serializable {
     public int getCurrentLocation() {
         return currentLocation;
     }
-
+    
+    public int getPlanetDepth() {
+        return planetDepth;
+    }
+    
+    public int setPlanetDepth(int planetDepth) {
+        this.planetDepth = planetDepth;
+        return planetDepth;
+    }
+    
+    public int getSufaceDensity() {
+        return surfaceDensity;
+    }
+    
+    public int setSurfaceDensity(int surfaceDensity) {
+        this.surfaceDensity = surfaceDensity;
+        return surfaceDensity;
+    }
+    
     public void setCurrentLocation(int currentLocation) {
         this.currentLocation = currentLocation;
     }
