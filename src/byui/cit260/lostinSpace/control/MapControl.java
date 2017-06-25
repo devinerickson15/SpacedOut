@@ -18,7 +18,7 @@ class MapControl {
     
     Map map = new Map();
     
-    Planet[] locations = new Planet[16];
+    Planet[] locations = new Planet[25];
     
     /*private String name;
     private String desc;
@@ -42,6 +42,16 @@ class MapControl {
     locations[13] = new Planet ("Blowhard", "High heat and strong winds", 13, 45, 22); //My mother-in-law named this one :)
     locations[14] = new Planet ("Enano", "Beware the dwarf!", 14, 40, 21);
     locations[15] = new Planet ("Niqueetun", "Don't get caught in the curls!", 15, 42, 19);
+    locations[16] = new Planet("Barometer" , "You will never know the temperature!", 16, 29, 15);
+    locations[17] = new Planet("Black Hole", "This isn't the place you want to visit.", 17, 50, 1);
+    locations[18] = new Planet("Andromida", "A Planet Far Far Away...", 18,43, 20);
+    locations[19] = new Planet ("Phobos", "It's the fear of 'bos'", 19, 10, 4);
+    locations[20] = new Planet ("Mathilde", "A average sized meteor when measured.", 20, 21, 12);
+    locations[21] = new Planet ("Luna", "The dark side of the moon.", 21, 17, 12);
+    locations[22] = new Planet ("Cupid", "Put a little love in your heart!", 22 ,41, 22);
+    locations[23] = new Planet ("MakeMake", "If the beach was a planet!", 23, 36, 23);
+    locations[24] = new Planet ("Marbles", "Ever feel like you part of something much bigger?", 24, 42, 21); 
+   
    
     
     assignScenesToLocations(locations);
