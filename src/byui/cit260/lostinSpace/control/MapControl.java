@@ -30,7 +30,11 @@ class MapControl {
     locations[1] = new Planet("Uranus", "Take a guess.", 1, 25, 14);
     locations[2] = new Planet("Saturn", "It has many rings.", 2, 37, 31);
     locations[3] = new Planet("Titan", "It is made up, I think it is acutally a moon.", 3, 34, 19);
-    locations[4] = new Planet("Jupitar", "Has a red spot, should get it checked for cancer.", 4, 49, 24);
+    locations[4] = new Planet("Jupiter", "Has a red spot, should get it checked for cancer.", 4, 49, 24);
+    locations[5] = new Planet("Mars" , "Dry and barren", 5, 29, 15);
+    locations[6] = new Planet("Moon", "Hey, I can see my house from here", 6, 22, 12);
+    locations[7] = new Planet("Pluto", "Did you hear about Pluto?! That's messed up!", 7, 33, 18);
+   
     
     assignScenesToLocations(locations);
     return map;
