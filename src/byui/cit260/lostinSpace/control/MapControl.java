@@ -18,7 +18,7 @@ class MapControl {
     
     Map map = new Map();
     
-    Planet[] locations = new Planet[5];
+    Planet[] locations = new Planet[8];
     
     /*private String name;
     private String desc;
