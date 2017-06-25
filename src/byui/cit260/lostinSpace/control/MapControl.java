@@ -50,7 +50,7 @@ class MapControl {
     locations[21] = new Planet ("Luna", "The dark side of the moon.", 21, 17, 12);
     locations[22] = new Planet ("Cupid", "Put a little love in your heart!", 22 ,41, 22);
     locations[23] = new Planet ("MakeMake", "If the beach was a planet!", 23, 36, 23);
-    locations[24] = new Planet ("Marbles", "Ever feel like you part of something much bigger?", 24, 42, 21); 
+    locations[24] = new Planet ("Earth", "Home Sweet Home!", 24, 42, 21); 
    
    
     
