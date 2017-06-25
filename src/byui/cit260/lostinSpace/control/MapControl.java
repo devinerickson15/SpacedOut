@@ -38,11 +38,11 @@ class MapControl {
     }
 
     static void movePlayersToStartingLocation(Map map) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** movePlayersToStartingLocation() stub function called***");
     }
 
     private static void assignScenesToLocations(Planet[] locations) {
-        //filler until we figure out what goes here???!!??!?!?!
+        System.out.println("\n*** assignScenesToLocations() stub function called***");
     }
     
 }

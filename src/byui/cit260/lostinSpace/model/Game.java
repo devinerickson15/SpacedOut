@@ -85,11 +85,11 @@ public class Game implements Serializable{
     }   
 
     public void setPlayer(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** setPLayer() stub function called***");
     }
 
     public void setInventory(Inventory[] inventoryList) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** setInventoryK() stub function called***");
     }
 
     public void setMap(Map newMap) {
@@ -97,15 +97,15 @@ public class Game implements Serializable{
     }
 
     public void setWeapon(Weapon[] weaponList) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+           System.out.println("\n*** setWeapon() stub function called***");
     }
 
     public void setFuel(Fuel fuel) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** setFuel() stub function called***");
     }
 
     public void setAlien(Alien[] alienList) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n*** setAlien() stub function called***");
     }
 }
 

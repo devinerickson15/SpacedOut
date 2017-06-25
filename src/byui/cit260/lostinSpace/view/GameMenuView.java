@@ -28,6 +28,7 @@ public class GameMenuView extends View{
                   + "\nE - Engage Alien"
                   + "\nP - Solve A Puzzle"
                   + "\nS - Save Game"
+                  + "\nM - View Map"     
                   + "\nH - Help"
                   + "\nQ - Quit to Main Menu"
                   + "\n--------------------------------");           
@@ -60,6 +61,9 @@ public class GameMenuView extends View{
                 break;
             case "S":
                 this.saveGame();
+                break;
+            case "M":
+                this.viewMap();
                 break;
             case "H":
                 this.displayHelpMenu();
@@ -118,6 +122,10 @@ public class GameMenuView extends View{
     private void displayFightMenu() {
         FightMenuView fightMenuView = new FightMenuView();
         fightMenuView.display();
+    }
+
+    private void viewMap() {
+        System.out.println("\n*** viewMap() stub function called***");
     }
    
 }
