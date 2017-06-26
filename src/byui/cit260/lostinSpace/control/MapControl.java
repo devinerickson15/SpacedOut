@@ -7,6 +7,7 @@ package byui.cit260.lostinSpace.control;
 
 import byui.cit260.lostinSpace.model.Map;
 import byui.cit260.lostinSpace.model.Planet;
+import byui.cit260.lostinSpace.model.RegularSceneType;
 
 /**
  *
@@ -17,7 +18,6 @@ class MapControl {
     public static Map createMap() {
     
     Map map = new Map();
-    
     Planet[] locations = new Planet[25];
     
     /*private String name;
@@ -52,8 +52,6 @@ class MapControl {
     locations[23] = new Planet ("MakeMake", "If the beach was a planet!", 23, 36, 23);
     locations[24] = new Planet ("Earth", "Home Sweet Home!", 24, 42, 21); 
    
-   
-    
     assignScenesToLocations(locations);
     return map;
     
@@ -64,7 +62,32 @@ class MapControl {
     }
 
     private static void assignScenesToLocations(Planet[] locations) {
-        System.out.println("\n*** assignScenesToLocations() stub function called***");
+        
+        locations[0].setScene(new RegularSceneType());
+        locations[1].setScene(new RegularSceneType());
+        locations[2].setScene(new RegularSceneType());
+        locations[3].setScene(new RegularSceneType());
+        locations[4].setScene(new RegularSceneType());
+        locations[5].setScene(new RegularSceneType());
+        locations[6].setScene(new RegularSceneType());
+        locations[7].setScene(new RegularSceneType());
+        locations[8].setScene(new RegularSceneType());
+        locations[9].setScene(new RegularSceneType());
+        locations[10].setScene(new RegularSceneType());
+        locations[11].setScene(new RegularSceneType());
+        locations[12].setScene(new RegularSceneType());
+        locations[13].setScene(new RegularSceneType());
+        locations[14].setScene(new RegularSceneType());
+        locations[15].setScene(new RegularSceneType());
+        locations[16].setScene(new RegularSceneType());
+        locations[17].setScene(new RegularSceneType());
+        locations[18].setScene(new RegularSceneType());
+        locations[19].setScene(new RegularSceneType());
+        locations[20].setScene(new RegularSceneType());
+        locations[21].setScene(new RegularSceneType());
+        locations[22].setScene(new RegularSceneType());
+        locations[23].setScene(new RegularSceneType());
+        locations[24].setScene(new RegularSceneType());    
     }
     
 }

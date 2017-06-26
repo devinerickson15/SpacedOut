@@ -113,6 +113,10 @@ public class Planet implements Serializable {
         }
         return true;
     }
+
+    public void setScene(RegularSceneType regularSceneType) {
+       System.out.println("\n*** stub function called***"); 
+    }
     
     
 }

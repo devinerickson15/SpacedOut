@@ -8,6 +8,8 @@ package byui.cit260.lostinSpace.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+
+
 /**
  *
  * @author devinerickson

@@ -130,18 +130,8 @@ public class GameMenuView extends View{
     }
 
     private void viewMap() {
-        System.out.println("\n*** viewMap() stub function called***");
-        
-        //System.out.println("\nMap");
-        
-        /*Game game = LostInSpace.getCurrentGame();
-        Map map = game.getMap();
-        Planet[] locations = map.Locations[];
-        
-        for(int i = 0; i < locations.length; i++) {
-            System.out.println("Locations" + locations[i].getName() + ":"
-                +locations[i].getScene().getDescription());
-        }*/
+      MapView showMap = new MapView();
+      showMap.displayMap();
     
     }
    

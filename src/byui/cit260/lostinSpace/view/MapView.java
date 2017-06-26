@@ -5,23 +5,29 @@
  */
 package byui.cit260.lostinSpace.view;
 
+import byui.cit260.lostinSpace.model.Game;
+import byui.cit260.lostinSpace.model.Map;
+import byui.cit260.lostinSpace.model.Planet;
+import lostinspace.LostInSpace;
+
 /**
  *
  * @author JacobsonKe
  */
 public class MapView {
     
+    public MapView() {                          
+    }
     
-    
-    /*private void displayMap(){
+    public void displayMap(){
         Game game = LostInSpace.getCurrentGame();
         Map map = game.getMap();
-        Planet[] locations = map.getPlanets();
+        Planet[] location = map.getLocation();
         
-        for(int i=0; i < locations.length; i++){
+        for(int i=0; i < location.length; i++){
             System.out.println(
-            "Planet " + locations[i].getName() + ": "
-            + locations[i].getScene().getDescription());
+            "Planet " + location[i].getName() + ": "
+            + location[i].getDesc());
         }
-    }*/
+    }
 }
