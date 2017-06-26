@@ -5,8 +5,13 @@
  */
 package byui.cit260.lostinSpace.view;
 
+import byui.cit260.lostinSpace.model.Game;
+import byui.cit260.lostinSpace.model.Map;
+import byui.cit260.lostinSpace.model.Planet;
 import byui.cit260.lostinSpace.view.ViewInterface.View;
 import java.util.Scanner;
+import static jdk.nashorn.internal.objects.NativeArray.map;
+import lostinspace.LostInSpace;
 
 /**
  *
@@ -28,7 +33,7 @@ public class GameMenuView extends View{
                   + "\nE - Engage Alien"
                   + "\nP - Solve A Puzzle"
                   + "\nS - Save Game"
-                  + "\nM - View Map"     
+                  + "\nM - Display Map"     
                   + "\nH - Help"
                   + "\nQ - Quit to Main Menu"
                   + "\n--------------------------------");           
@@ -126,6 +131,18 @@ public class GameMenuView extends View{
 
     private void viewMap() {
         System.out.println("\n*** viewMap() stub function called***");
+        
+        //System.out.println("\nMap");
+        
+        /*Game game = LostInSpace.getCurrentGame();
+        Map map = game.getMap();
+        Planet[] locations = map.Locations[];
+        
+        for(int i = 0; i < locations.length; i++) {
+            System.out.println("Locations" + locations[i].getName() + ":"
+                +locations[i].getScene().getDescription());
+        }*/
+    
     }
    
 }
