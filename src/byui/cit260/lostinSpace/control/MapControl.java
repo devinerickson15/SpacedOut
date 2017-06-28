@@ -51,6 +51,8 @@ class MapControl {
     locations[22] = new Planet ("Cupid", "Put a little love in your heart!", 22 ,41, 22);
     locations[23] = new Planet ("MakeMake", "If the beach was a planet!", 23, 36, 23);
     locations[24] = new Planet ("Earth", "Home Sweet Home!", 24, 42, 21); 
+    
+    map.setLocation(locations);
    
     assignScenesToLocations(locations);
     return map;
