@@ -6,8 +6,11 @@
 package byui.cit260.lostinSpace.view;
 
 import byui.cit260.lostinSpace.control.FuelControl;
+import byui.cit260.lostinSpace.exceptions.FuelControlException;
 import byui.cit260.lostinSpace.view.ViewInterface.View;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,6 +19,7 @@ import java.util.Scanner;
 public class FuelView extends View{
     
     public FuelView() {
+        
         
         super("\n Please enter the amount of fuel you wish to gather.");
         
@@ -41,14 +45,21 @@ public class FuelView extends View{
     @Override
     public boolean doAction(String userChoice) {
         
-        String input = userChoice;
+        int choice = 0;
         
-        int choice = Integer.parseInt(input); // convert input to int
-        
-        int doEquation = FuelControl.gatherFuel(15,7,choice);
+        try {
+            String input = userChoice;
             
-            //prints line if  user exceeded the maximum 
-           if (doEquation == 0) {  
+            try {
+            choice = Integer.parseInt(input); // convert input to int
+            } catch (NumberFormatException nf) {
+                System.out.println("\nYou must enter a valid number."
+                                  +"\n Try again or enter Q to quit.");
+            return false;}
+            int doEquation = FuelControl.gatherFuel(15,7,choice);
+            
+            //prints line if  user exceeded the maximum
+            /*if (doEquation == 0) {
                 System.out.println("You exceeded the maximum amount for your location. "
                         + "\n *** Please try again. ***");
                 return false;
@@ -57,13 +68,16 @@ public class FuelView extends View{
             else if (doEquation == -1) { //
                 System.out.println("\n *** Invalid input. Please enter a number between 1-10. ***");
                 return false;
-            }
-   
-        this.displayNextView(doEquation);
-    
-        return true; //success!
+            }*/
+            
+            this.displayNextView(doEquation);
+            
+            return true; //success!
+        } catch (FuelControlException ex) {
+            Logger.getLogger(FuelView.class.getName()).log(Level.SEVERE, null, ex);
+        }
            
-    }
+    return true;}
 
     private void displayNextView(int doEquation) {
         

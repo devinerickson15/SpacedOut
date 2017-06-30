@@ -5,6 +5,7 @@
  */
 package byui.cit260.lostinSpace.control;
 
+import byui.cit260.lostinSpace.exceptions.FuelControlException;
 import java.util.Random;
 
 /**
@@ -13,7 +14,7 @@ import java.util.Random;
  */
 public class FuelControl {
     
-    static public int gatherFuel (int planetDepth, int surfaceDensity, int userInput) {
+    static public int gatherFuel (int planetDepth, int surfaceDensity, int userInput) throws FuelControlException {
         
         planetDepth = 15;
         surfaceDensity = 7;
@@ -25,7 +26,7 @@ public class FuelControl {
         
             //Checks for invalid inputs
             if (userInput > 10 || userInput < 1){
-                return -1;
+                throw new FuelControlException("Invalid input, please enter a number between 1 and 10.");
             } 
         
         //equation to determine how much fuel to mine
@@ -33,7 +34,7 @@ public class FuelControl {
         
             //If fuel amount exceeds planet depth, no fuel is collected
            if (miningAttempt > planetDepth){
-                return 0;
+                throw new FuelControlException("You have exceeded the planet's maximum depth, please try again.");
             }
         
         //Pass miningAttempt variable to percentFuel() function
