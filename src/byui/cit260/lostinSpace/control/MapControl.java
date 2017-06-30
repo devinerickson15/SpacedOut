@@ -56,7 +56,7 @@ class MapControl {
    
     assignScenesToLocations(locations);
     return map;
-    
+      
     }
 
     static void movePlayersToStartingLocation(Map map) {
