@@ -6,15 +6,16 @@
 
 package byui.cit260.lostinSpace.control;
 
+import byui.cit260.lostinSpace.exceptions.ActorControlException;
 import java.util.Random;
 
 public class ActorControl {
-        public int attackAlien(int weakAttack,int mediumAttack, int strongAttack, int playerHp, int alienHp)  {
+        public int attackAlien(int weakAttack,int mediumAttack, int strongAttack, int playerHp, int alienHp) throws ActorControlException {
            
             if (weakAttack < 1) {
-            return -1;}
+                throw new ActorControlException ("*** Weak Earthling, enter a higher number! ***");}
             if (strongAttack > 20) {
-            return -1;}
+                throw new ActorControlException("*** Inferior lifeform, enter a number below 20! ***");}
             
            playerHp = 100;
            alienHp = 20;
