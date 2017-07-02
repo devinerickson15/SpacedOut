@@ -44,7 +44,7 @@ int opportunity = randomGenerator.nextInt(100) + 1;
         return playerHp;
 }} 
 
-    public int fleeAlien(int userSpeed,int weaponSpeedBonus,int alienSpeed){
+    public int fleeAlien(int userSpeed,int weaponSpeedBonus,int alienSpeed) throws ActorControlException {
         
     weaponSpeedBonus = 2;
     alienSpeed = 12;
@@ -57,10 +57,10 @@ int opportunity = randomGenerator.nextInt(100) + 1;
     int flightSuccess = ((userSpeed + weaponSpeedBonus) - alienSpeed);
     
     if (flightSuccess > 0){
-        return 1;
+        throw new ActorControlException ("*** You have survived this once, little person! ***");
     }
     else {
-        return -1;
+        throw new ActorControlException ("*** You have been badly wounded, you might just die out here! ***");
     } 
     }}
 

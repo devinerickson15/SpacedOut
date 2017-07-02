@@ -21,6 +21,7 @@
  */
 
 package byui.cit260.lostinSpace.control;
+import byui.cit260.lostinSpace.exceptions.FuelControlException;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -37,7 +38,7 @@ public class FuelControlTest {
      * Test of gatherFuel method, of class FuelControl.
      */
     @Test
-    public void testGatherFuel() {
+    public void testGatherFuel() throws FuelControlException {
         
         System.out.println("gatherFuel");
         

@@ -45,11 +45,19 @@ public class SolvePuzzleView extends View{
     @Override
     public boolean doAction(String choice) {
         
+        int puzzle = 0;
+        
         String input = choice;
         
-        int X = Integer.parseInt(input);
+        try {
+        puzzle = Integer.parseInt(input);
+        } catch (NumberFormatException nf) {
+            System.out.println("\nYou must enter a valid number."
+                              +"\n Try again or enter Q to quit.");
+        return false;}
         
-        int check = PuzzleControl.solvePuzzle(X);
+        
+        int check = PuzzleControl.solvePuzzle(puzzle);
         
             if(check == -1) {
                 System.out.println("!!!***  Try using a number with the range given  ***!!!"
