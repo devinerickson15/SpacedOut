@@ -6,18 +6,19 @@
 package byui.cit260.lostinSpace.view;
 
 import byui.cit260.lostinSpace.control.FuelControl;
-//import byui.cit260.lostinSpace.model.AltViewInterface.AltView;
 import byui.cit260.lostinSpace.view.ViewInterface.View;
 
 /**
  *
  * @author Kevin
  */
-public class FuelPercentageView{
+public class FuelPercentageView {
     
-    private String promptMessage;
     
-   /*private int percent = FuelControl.percentFuel();
+    
+    /**private String promptMessage;
+    
+   private int percent = FuelControl.percentFuel();
     
     public FuelPercentageView() {
                         
@@ -48,11 +49,11 @@ public class FuelPercentageView{
     
         return true; //success!
     }
-    */
+   
     
 
     
-   /** private void displayNextView(int percent) {
+  private void displayNextView(int percent) {
         
         // Display a custom welcome message
         System.out.println("\n========================================================"
@@ -60,7 +61,7 @@ public class FuelPercentageView{
                         + "\n========================================================="
                          );
     }
-*/
 
+*/
     
 }

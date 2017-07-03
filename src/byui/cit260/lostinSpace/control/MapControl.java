@@ -61,6 +61,7 @@ class MapControl {
 
     static void movePlayersToStartingLocation(Map map) {
         System.out.println("\n*** movePlayersToStartingLocation() stub function called***");
+  
     }
 
     private static void assignScenesToLocations(Planet[] locations) {

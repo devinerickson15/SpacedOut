@@ -16,9 +16,9 @@ public class FuelPercentMenuView extends View{
     public FuelPercentMenuView() {
                super("\n"
                   + "\n--------------------------------"
-                  + "|          Game Menu                   |"
+                  + "|          Fuel Level Menu                   |"
                   + "\n--------------------------------"
-                  + "\nF - Fuel Percentage"
+                  + "\nF - Fuel Level"
                   + "\nG - How to gather Fuel"
                   + "\nH - Help"
                   + "\nQ - Quit"
@@ -49,7 +49,9 @@ public class FuelPercentMenuView extends View{
         }
 
     private void displayPercent() {
-        System.out.println("**** Stub function displayPercent() called ***");
+        
+        FuelAmountView fuelAmount = new FuelAmountView();
+        fuelAmount.display();
     }
 
     private void gatherFuel() {

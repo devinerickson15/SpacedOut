@@ -38,13 +38,32 @@ public class FuelControl {
             }
         
         //Pass miningAttempt variable to percentFuel() function
-        percentFuel(miningAttempt);
+        //percentFuel(miningAttempt);
            
         return miningAttempt;
        
     }
     
-    static public int percentFuel(int currentFuel) {
+    public static double tankAmount(double currentFuel)throws FuelControlException{
+        
+       double tankCapacity = 30;
+        double percFuel = 0;
+        
+        if (currentFuel < 0 || currentFuel > 30){
+            throw new FuelControlException("Please enter a valid input");
+        }
+        
+        percFuel = (currentFuel/ tankCapacity) * 100;
+        
+        if (percFuel < 20){
+            throw new FuelControlException("Fuel is too low for travel. "
+                    + "Return to Game Menu to mine more fuel.");
+        }
+        
+        return percFuel;
+    }
+    
+   /** static public int percentFuel(int currentFuel) {
         
         //currentFuel = 100;
         
@@ -59,5 +78,6 @@ public class FuelControl {
             }
         
         return currentFuel;
-    }
+    }*/
+    
 }
