@@ -6,9 +6,12 @@
 package byui.cit260.lostinSpace.view;
 
 import byui.cit260.lostinSpace.control.PuzzleControl;
+import byui.cit260.lostinSpace.exceptions.PuzzleControlException;
 import byui.cit260.lostinSpace.view.ViewInterface.View;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -46,7 +49,9 @@ public class SolvePuzzleView extends View{
     public boolean doAction(String choice) {
         
         int puzzle = 0;
-        
+        int check = 0;
+   
+    try {
         String input = choice;
         
         try {
@@ -56,10 +61,13 @@ public class SolvePuzzleView extends View{
                               +"\n Try again or enter Q to quit.");
         return false;}
         
+            check = PuzzleControl.solvePuzzle(puzzle);
         
-        int check = PuzzleControl.solvePuzzle(puzzle);
+        } catch (PuzzleControlException ex) {
+            Logger.getLogger(SolvePuzzleView.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
-            if(check == -1) {
+           /** if(check == -1) {
                 System.out.println("!!!***  Try using a number with the range given  ***!!!"
                                                 + "\n-----Please try again------");
                 return false;
@@ -73,7 +81,7 @@ public class SolvePuzzleView extends View{
                 System.out.println("Oops... your number is too low,"
                     + "\n-----Please try again------");
                 return false;
-            }
+            }*/
             
             this.displayNextView(check);
             

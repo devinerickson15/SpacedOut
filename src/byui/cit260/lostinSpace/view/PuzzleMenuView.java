@@ -17,7 +17,7 @@ public class PuzzleMenuView extends View{
     public PuzzleMenuView() {
         super("\n"
                   + "\n--------------------------------"
-                  + "|             Puzzle Menu            |"
+                  + "\n|             Puzzle Menu            |"
                   + "\n--------------------------------"
                   + "\nP - Puzzle"
                   + "\nM - Map"
