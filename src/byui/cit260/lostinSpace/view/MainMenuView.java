@@ -19,10 +19,11 @@ public class MainMenuView extends View{
        public MainMenuView() {
                    super(  "\n"
                   + "\n--------------------------------"
-                  + "|     Main Menu                   |"
+                  + "\n|     Main Menu                |"
                   + "\n--------------------------------"
                   + "\nN - Start New Game"
                   + "\nR - Restore Existing Game"
+                  + "\nS - Save Game"         
                   + "\nH - Get Help On How To Play The Game"
                   + "\nQ - Quit Game!"
                   + "\n--------------------------------");           
@@ -40,6 +41,9 @@ public class MainMenuView extends View{
                 break;
             case "R":
                 this.restoreExistingGame();
+                break;
+            case "S":
+                this.saveGame();
                 break;
             case "H":
                 this.displayHelpMenu();
@@ -62,7 +66,20 @@ public class MainMenuView extends View{
     }
 
     private void restoreExistingGame() {
-        System.out.println("*** restoreExistingGame function called***");
+       
+        this.console.println("\nEnter the file path for file where the game "
+                           + "was saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.restoreExistingGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.display();
     }
 
     private void displayHelpMenu() {
@@ -72,6 +89,20 @@ public class MainMenuView extends View{
         
         //display the help menu view
         helpMenuView.display();
+    }
+
+    private void saveGame() {
+        
+        this.console.println("\nEnter the file path for file where the game"
+                           + " is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            
+            GameControl.saveGame(LostInSpace.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
     }
     

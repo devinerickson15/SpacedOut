@@ -6,6 +6,8 @@
 
 package byui.cit260.lostinSpace.control;
 
+import byui.cit260.lostinSpace.view.MainMenuView;
+import byui.cit260.lostinSpace.exceptions.GameControlException;
 import byui.cit260.lostinSpace.model.Alien;
 import byui.cit260.lostinSpace.model.Fuel;
 import byui.cit260.lostinSpace.model.Game;
@@ -13,6 +15,10 @@ import byui.cit260.lostinSpace.model.Inventory;
 import byui.cit260.lostinSpace.model.Map;
 import byui.cit260.lostinSpace.model.Player;
 import byui.cit260.lostinSpace.model.Weapon;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import lostinspace.LostInSpace;
 
 /**
@@ -20,6 +26,7 @@ import lostinspace.LostInSpace;
  * @author Kevin
  */
 public class GameControl {
+
 
     public static Player createPlayer(String name) {
         
@@ -88,6 +95,33 @@ public class GameControl {
         inventory[Item.terminator.ordinal()] = weapon6;
         
         return inventory; 
+    }
+
+    public static void saveGame(Game currentGame, String filePath) throws GameControlException {
+    
+        try (FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(currentGame);
+        } catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+    public static void restoreExistingGame(String filePath) throws GameControlException {
+        
+        Game game = null;
+        
+        try (FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        
+        LostInSpace.setCurrentGame(game);
     }
     
     public enum Item {

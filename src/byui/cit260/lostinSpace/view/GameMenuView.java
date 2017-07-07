@@ -5,6 +5,7 @@
  */
 package byui.cit260.lostinSpace.view;
 
+import byui.cit260.lostinSpace.control.GameControl;
 import byui.cit260.lostinSpace.model.Game;
 import byui.cit260.lostinSpace.model.Map;
 import byui.cit260.lostinSpace.model.Planet;
@@ -114,7 +115,17 @@ public class GameMenuView extends View{
     }
 
     private void saveGame() {
-        System.out.println("\n*** saveGame() stub function called***");
+        
+        this.console.println("\nEnter the file path for file where the game"
+                           + " is to be saved.");
+        String filePath = this.getInput();
+        
+        try {
+            
+            GameControl.saveGame(LostInSpace.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void displayHelpMenu() {

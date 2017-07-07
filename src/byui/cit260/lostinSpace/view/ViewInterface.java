@@ -5,7 +5,10 @@
  */
 package byui.cit260.lostinSpace.view;
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import lostinspace.LostInSpace;
 
 /**
  *
@@ -20,6 +23,9 @@ public interface ViewInterface {
     public abstract class View implements ViewInterface{
         
         protected String displayMessage;
+        
+        protected final BufferedReader keyboard = LostInSpace.getInFile();
+        protected final PrintWriter console = LostInSpace.getOutFile();
         
         public View() {
             
@@ -46,19 +52,25 @@ public interface ViewInterface {
         @Override
         public String getInput() {
             
-        Scanner keyboard = new Scanner(System.in);
         String value = null;
         boolean valid = false;
-        while (!valid) {
-            System.out.println("\n" + this.displayMessage);
+        
+        try {
             
-            value =keyboard.nextLine();
-            value =value.trim();
+        while (!valid) {
+            this.console.println("\n" + this.displayMessage);
+            
+            value = this.keyboard.readLine();
+            value = value.trim();
+            
             if (value.length() < 1){
-                System.out.println("\n*** You Must enter a value ***");
+                ErrorView.display(this.getClass().getName(), "\n*** You Must enter a value ***");
                 continue;
             }
             break;
+        }
+        } catch (Exception e) {
+            ErrorView.display(this.getClass().getName(), "Error reading input: " + e.getMessage());
         }
         return value;
         }

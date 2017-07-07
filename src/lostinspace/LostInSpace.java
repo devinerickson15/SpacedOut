@@ -18,6 +18,10 @@ import byui.cit260.lostinSpace.model.Puzzle;
 import byui.cit260.lostinSpace.model.Weapon;
 
 import byui.cit260.lostinSpace.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
 
 /**
  *
@@ -31,6 +35,11 @@ public class LostInSpace {
     
     private static Game currentGame = null;
     private static Player player = null;
+    
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -47,18 +56,81 @@ public class LostInSpace {
     public static void setPlayer(Player player) {
         LostInSpace.player = player;
     }
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        LostInSpace.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        LostInSpace.inFile = inFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        LostInSpace.logFile = logFile;
+    }
     
     
-    
+     
     public static void main(String[] args) {
-      
+        
+        try {
+            
+            LostInSpace.inFile = new BufferedReader(new InputStreamReader(System.in));
+            LostInSpace.outFile = new PrintWriter(System.out, true);
+                   
+            try {
+            
+                String filePath = "log.txt";
+                LostInSpace.logFile = new PrintWriter(filePath);
+              
+            } catch (Exception e) {
+                System.out.println("Exception: " + e.toString() +
+                                   "\nCause: " + e.getCause() +
+                                   "\nMessage: " + e.getMessage());
+            }     
+            
     StartProgramView startProgramView = new StartProgramView();
-    try {
-        startProgramView.display();
-    } catch (Throwable te) {
-        System.out.println(te.getMessage());
-        te.printStackTrace();
-        startProgramView.display();
+    startProgramView.display();
+    return;
+    
+    } catch (Throwable e) {
+        System.out.println("Exception: " + e.toString() +
+                           "\nCause: " + e.getCause() +
+                           "\nMessage: " + e.getMessage());
+                
+        e.printStackTrace();;
     }
+        
+    finally {
+            
+        try {
+            
+            if (LostInSpace.inFile != null)
+                LostInSpace.inFile.close();
+            
+            if (LostInSpace.outFile != null)
+                LostInSpace.outFile.close();
+            
+            if (LostInSpace.logFile != null)
+                LostInSpace.logFile.close();
+            
+        } catch (IOException ex) {
+            System.out.println("Error closing files");
+            return;
+        }
+
+    
     }
-}
+}}

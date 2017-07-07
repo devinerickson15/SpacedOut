@@ -4,6 +4,8 @@
  * and open the template in the editor.
  */
 
+//Make sure to lesson 12 team assignment page 13-15 when you add the keyboard scanner for this class.
+
 package byui.cit260.lostinSpace.control;
 
 import byui.cit260.lostinSpace.exceptions.ActorControlException;
@@ -63,40 +65,3 @@ int opportunity = randomGenerator.nextInt(100) + 1;
         throw new ActorControlException ("*** You have been badly wounded, you might just die out here! ***");
     } 
     }}
-
-/*
-import java.util.Scanner;
-
-
-
-public class ActorControl {
-    String[] attackMenu;
-    Scanner input = new Scanner(System.in);
-    
-    public int alienAttack(String userInput,int damage,int playerHp,int alienHp) {
-    
-        attackMenu = new String[1];
-        attackMenu[0] = "To select your form of attack, please type the letter associated with it.";
-        
-        
-        userInput = attackMenu[0];
-        
-        if(userInput==attackMenu[0]){       
-            System.out.println(attackMenu[0]);
-            System.out.println("A. Ultimate Punch");
-            System.out.println("B. Shank in the Rib");
-            System.out.println("C. Shoot in the Head");
-            System.out.println("D. Atom Bomb /n");
-            System.out.println("Your selection: ");
-            String userAttackChoice = input.next();
-            
-            switch (userAttackChoice.toUpperCase()){
-                case "A":
-                  userAttackChoice = "Ultimate Punch";
-                  System.out.println("");
-            }
-        }
-        String userInput = attackMenu[]
-    }
-}
-*/
