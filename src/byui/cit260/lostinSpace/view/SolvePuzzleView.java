@@ -64,24 +64,25 @@ public class SolvePuzzleView extends View{
             check = PuzzleControl.solvePuzzle(puzzle);
         
         } catch (PuzzleControlException ex) {
-            Logger.getLogger(SolvePuzzleView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-           /** if(check == -1) {
-                System.out.println("!!!***  Try using a number with the range given  ***!!!"
-                                                + "\n-----Please try again------");
+            
+            
+           if(check == -1) {
+                this.console.println("!!!***  Try using a number with the range given  ***!!!"
+                                                + "\n   -----Please try again------");
                 return false;
             } 
             else if (check == 0) {
-                System.out.println("Oops... your number is too high,"
-                    + "\n-----Please try again------");
+                this.console.println("Oops... your number is too high,"
+                    + "\n   -----Please try again------");
                 return false;
             }
             else if(check == 1){
-                System.out.println("Oops... your number is too low,"
-                    + "\n-----Please try again------");
+                this.console.println("Oops... your number is too low,"
+                    + "\n   -----Please try again------");
                 return false;
-            }*/
+            }
+        }
+        
             
             this.displayNextView(check);
             

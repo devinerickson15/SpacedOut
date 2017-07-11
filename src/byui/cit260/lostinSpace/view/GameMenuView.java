@@ -10,7 +10,11 @@ import byui.cit260.lostinSpace.model.Game;
 import byui.cit260.lostinSpace.model.Map;
 import byui.cit260.lostinSpace.model.Planet;
 import byui.cit260.lostinSpace.view.ViewInterface.View;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static jdk.nashorn.internal.objects.NativeArray.map;
 import lostinspace.LostInSpace;
 
@@ -34,7 +38,8 @@ public class GameMenuView extends View{
                   + "\nE - Engage Alien"
                   + "\nP - Solve A Puzzle"
                   + "\nS - Save Game"
-                  + "\nM - Display Map"     
+                  + "\nM - Display Map"
+                  + "\nR - Print Player Report"     
                   + "\nH - Help"
                   + "\nQ - Quit to Main Menu"
                   + "\n--------------------------------");           
@@ -70,6 +75,16 @@ public class GameMenuView extends View{
                 break;
             case "M":
                 this.viewMap();
+                break;
+            case "R":
+        {
+            try {
+                this.printPlayerReport();
+            } catch (FileNotFoundException ex) {
+                System.out.println("Error closing files");
+                return false;
+            }
+        }
                 break;
             case "H":
                 this.displayHelpMenu();
@@ -144,6 +159,32 @@ public class GameMenuView extends View{
       MapView showMap = new MapView();
       showMap.displayMap();
     
+    }
+
+    private void printPlayerReport() throws FileNotFoundException {
+            this.console.println("\n\n Enter the file path for the printed report.");
+            
+            String filePath = this.getInput();
+            
+            PrintWriter playerWriter = new PrintWriter("player.txt");
+            try (PrintWriter out = new PrintWriter(filePath)) {
+                
+                Game game = LostInSpace.getCurrentGame();
+                Map map = game.getMap();
+                Planet[] location = map.getLocation();
+                
+                out.println();
+                out.println("Player Loadout");
+                out.println();
+                out.println();
+                out.println(String.format("Player", "Planet", "Description", "Time Elapsed"));
+                out.println(String.format("Player", "----------","----------","----------"));
+                
+                for (Planet locations : location) {
+                    out.println(String.format("Player", locations.getCurrentLocation(), locations.getDesc(), game.getTotalTime()));
+                    out.flush();
+                }
+            }
     }
    
 }
