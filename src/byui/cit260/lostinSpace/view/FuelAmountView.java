@@ -26,9 +26,9 @@ public class FuelAmountView extends View{
     private void displayDescription() {
         System.out.println(
                 "\n*******************************************************"
-              + "\n You must have at least 20% of fuel cpapcity to attempt take off"
+              + "\n You must have at least 20% of fuel capacity to attempt take off"
               + "\n Enter the amount of fuel you mined to deteremine if "
-              + "\n take off is a possibility for you, Earthling"
+              + "\n take off is a possibility for you, Earthling."
               + "\n*******************************************************"
         );
     }

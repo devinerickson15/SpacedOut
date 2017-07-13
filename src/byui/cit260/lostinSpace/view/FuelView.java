@@ -74,7 +74,10 @@ public class FuelView extends View{
             
             return true; //success!
         } catch (FuelControlException ex) {
-            Logger.getLogger(FuelView.class.getName()).log(Level.SEVERE, null, ex);
+            //System.out.println("\n YOU HAVE ARRIVED!");
+            //String filePath = this.getInput();
+            // Logger.getLogger(FuelView.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Fuel exception:  "+ex.getMessage());
         }
            
     return true;}

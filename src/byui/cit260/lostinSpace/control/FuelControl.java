@@ -63,15 +63,14 @@ public class FuelControl {
         return percFuel;
     }
     
-   /** static public int percentFuel(int currentFuel) {
-        
-        //currentFuel = 100;
+   /*static public double percentFuel(int currentFuel) {
+        double percentOfFuel = 0;
         
         //Fuel tank capacity
         int fuelCapacity = 30;
         
         //calculate percent
-        currentFuel = (currentFuel/ fuelCapacity) * 100;
+        percentOfFuel = (currentFuel/ fuelCapacity) * 100;
         
             if (currentFuel < 20) {
                 return -2;

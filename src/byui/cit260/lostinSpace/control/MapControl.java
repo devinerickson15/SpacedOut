@@ -13,7 +13,7 @@ import byui.cit260.lostinSpace.model.RegularSceneType;
  *
  * @author JacobsonKe
  */
-class MapControl {
+public class MapControl {
 
     public static Map createMap() {
     

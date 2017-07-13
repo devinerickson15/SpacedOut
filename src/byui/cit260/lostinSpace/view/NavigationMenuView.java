@@ -5,8 +5,18 @@
  */
 package byui.cit260.lostinSpace.view;
 
+import byui.cit260.lostinSpace.control.MapControl;
+import byui.cit260.lostinSpace.model.Game;
+import byui.cit260.lostinSpace.model.Map;
+import byui.cit260.lostinSpace.model.Planet;
+import byui.cit260.lostinSpace.model.RegularSceneType;
 import byui.cit260.lostinSpace.view.ViewInterface.View;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import lostinspace.LostInSpace;
 
 /**
  *
@@ -47,6 +57,7 @@ public class NavigationMenuView extends View{
                   + "\nL - Luna"
                   + "\nE - Earth"
                   + "\nH - Help"
+                  + "\nR- Print Report"
                   + "\nQ - Quit"
                   + "\n--------------------------------");           
     }
@@ -135,6 +146,8 @@ public class NavigationMenuView extends View{
             case "H":
                 this.displayHelpMenu();
                 break;
+            case "R":
+                this.printReport();
             default:
                 System.out.println("\n*** Invalid Selection *** Try again");
                 break;
@@ -248,5 +261,43 @@ public class NavigationMenuView extends View{
 
     private void startMakeMake() {
                 System.out.println("\n***  stub function called***");    
+    }
+
+    private void printReport() {
+        
+        this.console.println("\nPlease enter the file path for printed report");
+        
+        String filePath = this.getInput();
+       
+        
+        
+         try (PrintWriter output = new PrintWriter(filePath)){
+             
+             Game game = LostInSpace.getCurrentGame();
+             Map map = game.getMap();
+             Planet[] location = map.getLocation();          
+             
+             output.println("Planet Descriptions");
+             output.println(String.format("\n%-15s %-10s %-10s", "Planet", "Planet Depth", "Surface Density"));
+             output.println(String.format("\n%-15s %-10s %-10s", "---------", "---------", "-------"));
+             
+             for (Planet locations: location){
+                 output.println(String.format("\n%-15s %-10d %-10d",
+                         locations.getName(),
+                         locations.getPlanetDepth(),
+                         locations.getSufaceDensity()));
+                  
+                  output.flush();     
+             }
+             
+             
+             output.close();
+             
+             this.console.println();  
+             this.console.println("SUCCESS! The report was printed successfully!");
+             
+         } catch (FileNotFoundException ex) {
+             ErrorView.display("MainMenuView", ex.getMessage());
+         }
     }
 }
